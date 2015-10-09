@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+
+
+  <mvcSiteMapNode title="Dành cho thiếu nhi" controller="Home" action="Index" description="Dành cho thiếu nhi, video dành cho thiếu nhi, video cho bé, tranh tô màu, tranh tô cho bé" metaRobotsValues="index follow noodp noydir">
+    <mvcSiteMapNode title="Quản trị" area="Admin" controller="Start" action="Index" metaRobotsValues="noindex nofollow">
+      <mvcSiteMapNode title="Đổi mật khẩu" controller="Account" action="Manage" preservedRouteParameters="search" description="Đổi mật khẩu" />
+      <mvcSiteMapNode title="Thêm mới tin" controller="News" action="AddNew" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Bài viết" controller="News" action="List" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Chuyên mục" controller="Tag" action="List" taxonomy="category" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Tag" controller="Tag" action="List" taxonomy="tag" metaRobotsValues="noindex nofollow"/>
+
+      <mvcSiteMapNode title="Thêm mới Tranh tô" controller="Picture" action="AddNew" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Tranh tô" controller="Picture" action="List" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Danh mục Tranh tô" controller="Tag" action="List" taxonomy="picture" metaRobotsValues="noindex nofollow"/>
+
+      <mvcSiteMapNode title="Thêm mới Video" controller="Video" action="AddNew" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Video" controller="Video" action="List" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Danh mục Video" controller="Tag" action="List" taxonomy="picture" metaRobotsValues="noindex nofollow"/>
+
+      <mvcSiteMapNode title="Danh sách slide" controller="Slide" action="List" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Dánh sách nhóm slie" controller="SlideGroup" action="List" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Danh sách Album" controller="Album" action="List" metaRobotsValues="noindex nofollow"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Video" controller="Video" action="Index" description="Video dành cho thiếu nhi" keywords="video cho bé, video danh cho thieu nhi, video quảng cáo, ca nhac thieu nhi, phim hoat hinh, truyen co tich, website cho be, web cho be" >
+      <mvcSiteMapNode title="Video theo tag" controller="Video" action="VideoByTag" preservedRouteParameters="id,slug" description="Video theo tag" />
+      <mvcSiteMapNode title="Video theo loại" controller="Video" action="LoaiVideo" dynamicNodeProvider="TNVBABY.Web.VideoCateDynamicNodeProvider, TNVBABY.Web">
+        <mvcSiteMapNode title="Chi tiết Video màu" controller="Video" action="Xem" dynamicNodeProvider="TNVBABY.Web.VideoDynamicNodeProvider, TNVBABY.Web" />
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Game" controller="Game" action="Index" description="Game dành cho thiếu nhi" keywords="trò chơi cho bé, chơi game, web cho thieu nhi, danh cho thieu nhi, choi game vui">
+      <mvcSiteMapNode title="Game theo tag" controller="Game" action="GameByTag" preservedRouteParameters="id,slug" description="Game theo tag" />
+      <mvcSiteMapNode title="Game theo loại" controller="Game" action="LoaiGame" dynamicNodeProvider="TNVBABY.Web.GameCateDynamicNodeProvider, TNVBABY.Web">
+        <mvcSiteMapNode title="Chi tiết Game màu" controller="Game" action="Choi" dynamicNodeProvider="TNVBABY.Web.GameDynamicNodeProvider, TNVBABY.Web" />
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Tranh tô màu" controller="TranhTo" action="Index" description="Tranh tô màu" keywords="tranh to mau, tranh to mau cho be, tranh to, in tranh to mau,">
+      <mvcSiteMapNode title="Tranh tô theo tag liên quan" controller="TranhTo" action="TranhToByTag" preservedRouteParameters="id,slug" description="Tranh tô liên quan" />
+      <mvcSiteMapNode title="Tranh tô theo bé trai, bé gái" controller="TranhTo" action="DanhCho" description="Tranh tô theo giới tính" keywords="tranh to mau, tranh to cho be gai, tranh to mau cho be trai" />
+      <mvcSiteMapNode title="Tranh tô theo loại" controller="TranhTo" action="LoaiTranh" dynamicNodeProvider="TNVBABY.Web.PictureCateDynamicNodeProvider, TNVBABY.Web">
+        <mvcSiteMapNode title="Chi tiết tranh tô màu" controller="TranhTo" action="XemTranh" dynamicNodeProvider="TNVBABY.Web.PictureDynamicNodeProvider, TNVBABY.Web" />
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Góc cha mẹ" controller="GocChaMe" action="Index" description="Góc cha mẹ" keywords="kien thuc noi day con, chia se kien thuc nau an, goc cha mem bai viet hay">
+      <mvcSiteMapNode title="ListInCate" controller="GocChaMe" action="ListInCate" dynamicNodeProvider="TNVBABY.Web.CategoryDynamicNodeProvider, TNVBABY.Web">
+        <mvcSiteMapNode title="Details" controller="GocChaMe" action="Detail" dynamicNodeProvider="TNVBABY.Web.ArticleDynamicNodeProvider, TNVBABY.Web" />
+      </mvcSiteMapNode>
+      <mvcSiteMapNode title="Bài viết liên quan" controller="GocChaMe" action="ContentByTag" preservedRouteParameters="id,slug" description="Bài viết liên quan" keywords="kien thuc noi day con, chia se kien thuc nau an, goc cha mem bai viet hay"/>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Tìm kiếm" controller="Home" action="SearchPage" preservedRouteParameters="search" description="Tìm kiếm" />
+    <!--<mvcSiteMapNode title="Tải về video từ Youtube" controller="Home" action="DownloadYoutube" preservedRouteParameters="id" description="Tải về video từ Youtube" />-->
+
+  </mvcSiteMapNode>
+</mvcSiteMap>

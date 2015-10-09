@@ -1,0 +1,59 @@
+﻿@using MvcPaging;
+@model IPagedList<TNVBABY.Web.Models.T_News>
+
+<div class="row">
+    <!-- Article main content -->
+    <article class="col-md-9 maincontent">
+        @Html.MvcSiteMap().SiteMapPath()
+        <hr style="margin-top:5px" />
+        @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_GocChaMe_Center1.ToString() })
+        @foreach (var item in Model)
+        {
+            <h2>
+                <a title="" href="/GocChaMe/Detail/@item.ID/@item.Slug">
+                    @item.Title
+                </a>
+            </h2>
+            <p>
+                @Html.Raw(HttpUtility.HtmlDecode(@TNVBABY.Web.Utilities.Common.GetDescriptionHTML(@item.ContentNews)))
+            </p>
+            <hr />
+        }
+        @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_GocChaMe_Center2.ToString() })
+        <div class="dataTables_paginate paging_bootstrap" style="float:right">
+            @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+                                    .DisplayTemplate("Bootstrap3Pagination")
+                                    .MaxNrOfPages(14)
+                                    .AlwaysAddFirstPageNumber()
+                                    .SetPreviousPageText("← Trước")
+                                    .SetNextPageText("→ Sau")
+                                             .RouteValues(new { })
+                                    )
+        </div>
+        @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_GocChaMe_Center3.ToString() })
+    </article>
+    <!-- /Article -->
+    <!-- Sidebar -->
+    <aside class="col-md-3 sidebar sidebar-left">
+        <div class="row panel">
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_GocChaMe_Right1.ToString() })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetHotLinkRight", "Home", new { @type = TNVBABY.Web.Utilities.HotLinkType.ForParent.ToString(), @limit = 10 })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_GocChaMe_Right1.ToString() })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                <h3>Chuyên mục</h3>
+                @Html.Action("GetArticleCategoryMenu")
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_GocChaMe_Right3.ToString() })
+            </div>
+        </div>
+    </aside>
+    <!-- /Sidebar -->
+
+</div>

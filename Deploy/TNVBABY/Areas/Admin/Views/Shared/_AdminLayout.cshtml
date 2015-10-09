@@ -1,0 +1,226 @@
+﻿<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>@Html.MvcSiteMap().SiteMapTitle()</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.2 -->
+    <link href="~/Content/themes/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="~/Content/themes/admin/dist/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect.
+    -->
+    <link href="~/Content/themes/admin/dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/themes/admin/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+    <link href="~/Content/plugins/bootstrap-tagsinput/typeahead.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery 2.1.3 -->
+    <script src="/Content/themes/admin/plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <!-- Bootstrap 3.3.2 JS -->
+    <script src="/Content/themes/admin/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/Content/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js" type="text/javascript"></script>
+    <script src="/Content/plugins/bootstrap-tagsinput/typeahead.bundle.js" type="text/javascript"></script>
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|---------------------------------------------------------|
+
+-->
+<body class="skin-blue">
+    <div class="wrapper">
+        <!-- Main Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/Admin/Start/Index" class="logo"><b>Admin</b></a>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Ẩn/Hiện</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="/Content/themes/admin/dist/img/user64x64.png" class="user-image" alt="User Image" />
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                @if (Request.IsAuthenticated)
+                                {
+                                    <span class="hidden-xs">@User.Identity.Name</span>
+                                }
+                                else
+                                {
+                                    <span class="hidden-xs">Có lỗi xảy ra</span>
+                                }
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-footer">
+                                    <a href="/Account/Manage">Đổi mật khẩu</a>
+                                </li>
+                                <li class="user-footer">
+                                    <a href="/Account/LogOff">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu">
+                    <li class="header">MENU</li>
+                    <li class="treeview">
+                        <a href="#"><span>Video</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/AdminVideo/AddNew"><i class="fa fa-circle-o"></i>Thêm Video</a></li>
+                            <li><a href="/Admin/AdminVideo/List"><i class="fa fa-circle-o"></i>Video</a></li>
+                            <li><a href="/Admin/Tag/List?taxonomy=@TNVBABY.Web.Utilities.Constants.TAXONOMY_VIDEO"><i class="fa fa-circle-o"></i>Danh mục Video</a></li>
+                            <li><a href="/Admin/Chanel/List"><i class="fa fa-circle-o"></i>Chanel</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#"><span>Tranh tô</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/Picture/AddNew"><i class="fa fa-circle-o"></i>Thêm tranh tô</a></li>
+                            <li><a href="/Admin/Picture/List"><i class="fa fa-circle-o"></i>Tranh tô</a></li>
+                            <li><a href="/Admin/Tag/List?taxonomy=@TNVBABY.Web.Utilities.Constants.TAXONOMY_PIC"><i class="fa fa-circle-o"></i>Danh mục Tranh</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#"><span>Game</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/AdminGame/AddNew"><i class="fa fa-circle-o"></i>Thêm game</a></li>
+                            <li><a href="/Admin/AdminGame/List"><i class="fa fa-circle-o"></i>Game</a></li>
+                            <li><a href="/Admin/Tag/List?taxonomy=@TNVBABY.Web.Utilities.Constants.TAXONOMY_GAME"><i class="fa fa-circle-o"></i>Danh mục game</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#"><span>Góc cha mẹ</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Admin/News/AddNew"><i class="fa fa-circle-o"></i>Thêm bài viết</a></li>
+                            <li><a href="/Admin/News/List"><i class="fa fa-circle-o"></i>Bài viết</a></li>
+                            <li><a href="/Admin/Tag/List?taxonomy=@TNVBABY.Web.Utilities.Constants.TAXONOMY_CATEGORY"><i class="fa fa-circle-o"></i>Danh mục bài viết</a></li>
+                            <li><a href="/Admin/Tag/List?taxonomy=@TNVBABY.Web.Utilities.Constants.TAXONOMY_TAG"><i class="fa fa-circle-o"></i>Tag</a></li>
+                        </ul>
+                    </li>
+                    @if (User.IsInRole(TNVBABY.Web.Utilities.Constants.ROLE_SUPPRERADMIN) || User.IsInRole(TNVBABY.Web.Utilities.Constants.ROLE_ADMIN))
+                    {
+                        <li class="treeview">
+                            <a href="#"><span>Quản lý Quảng cáo</span> <i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                @*<li><a href="/Admin/Adver/List"><i class="fa fa-circle-o"></i>Quảng cáo</a></li>*@
+                                <li><a href="/Admin/Slide/List"><i class="fa fa-circle-o"></i>Quảng cáo</a></li>
+                                <li><a href="/Admin/SlideGroup/List"><i class="fa fa-circle-o"></i>Nhóm Quảng cáo</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#"><span>Album Ảnh</span> <i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Album/List"><i class="fa fa-circle-o"></i>Danh sách Album</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#"><span>Người dùng</span> <i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/UserManager/AddNew"><i class="fa fa-circle-o"></i>Thêm người dùng</a></li>
+                                <li><a href="/Admin/UserManager/List"><i class="fa fa-circle-o"></i>Người dùng</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#"><span>Config</span> <i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Config/List"><i class="fa fa-circle-o"></i>General</a></li>
+                                <li><a href="/Admin/Menu/List"><i class="fa fa-circle-o"></i>Menu</a></li>
+                                <li><a href="/Admin/HotLink/List"><i class="fa fa-circle-o"></i>Hot link</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul><!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                @RenderSection("header")
+                <ol class="breadcrumb">
+                    @Html.MvcSiteMap().SiteMapPath()
+                </ol>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <!-- Your Page Content Here -->
+                @RenderBody()
+            </section><!-- /.content -->
+        </div><!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+                <strong>Thiết kế bởi: <a href="http://tuvantinhoc.vn">Nguyễn Văn Tuấn</a></strong>
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2015 <a href="http://danhchothieunhi.com">Tư vấn tin học</a>.</strong> All rights reserved.
+        </footer>
+    </div><!-- ./wrapper -->
+    <!-- REQUIRED JS SCRIPTS -->
+    <!-- AdminLTE App -->
+    <script src="/Content/themes/admin/dist/js/app.min.js" type="text/javascript"></script>
+    <script src="/Content/themes/admin/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
+    <script src="/Content/themes/admin/plugins/slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- Optionally, you can add Slimscroll and FastClick plugins.
+          Both of these plugins are recommended to enhance the
+          user experience -->
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $('.focus :input').focus();
+        });
+    </script>
+</body>
+</html>

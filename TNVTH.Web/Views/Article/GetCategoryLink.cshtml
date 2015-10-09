@@ -1,0 +1,9 @@
+﻿@model IEnumerable<TNVTH.Web.Models.T_Tag>
+
+@foreach (TNVTH.Web.Models.T_Tag tag in Model)
+{
+    if (!String.IsNullOrEmpty(tag.Title))
+    {
+        @Html.ActionLink(tag.Title, "Blog", "Article", new { @id = tag.ID, @slug = tag.Slug }, new { @class = "tag_item" })
+    }
+}

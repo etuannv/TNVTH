@@ -1,0 +1,691 @@
+/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body {
+    background-color: #FFF;
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+
+a:link {
+    color: #034af3;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #505abc;
+}
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #12eb87;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    color: #000;
+}
+
+h1 {
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    padding: 0 0 10px 0;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header, #header {
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+}
+#login{
+    color: #FFFFFF;
+    float: right;
+    line-height: 27px;
+    padding-right: 14px;
+}
+
+header h1, #header h1 {
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-size: 32px !important;
+    text-shadow: 1px 1px 2px #111;
+}
+
+#main {
+    padding: 10px 30px 15px 30px;
+    background-color: #fff;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+}
+
+footer, 
+#footer {
+    background-color: #fff;
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0 0 30px 0;
+    font-size: .9em;
+    border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+}
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+input[type="text"], 
+input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 200px;
+}
+
+select {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+}
+
+input[type="submit"] {
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table {
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 5px;
+    border: solid 1px #e8eef4;
+}
+
+table th {
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear {
+    clear: both;
+}
+
+.error {
+    color: Red;
+}
+
+nav, 
+#menucontainer {
+}
+
+div#title {
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+#logindisplay {
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 10px;
+    color: White;
+}
+
+#logindisplay a:link {
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:visited {
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.editor-sector
+{}
+.editor-sector p.editor-in
+{
+    height: 26px;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+}
+.editor-sector .editor-in label
+{
+    float: left;
+    padding-right: 10px;
+    text-align: right;
+    width: 200px;
+    line-height: 26px;
+}
+
+.editor-sector .editor-in input
+{
+    width:250px;
+    float: left;
+}
+.editor-sector .editor-in span
+{
+    color: #FF0000;
+    float: left;
+    padding: 0 0 0 5px;
+    line-height: 26px;
+}
+.editor-sector p.editor-msg
+{
+    margin-top: 0;
+    overflow: hidden;
+    padding-left: 210px;
+    padding-top: 0;
+    font-size: 13px;
+}
+
+.display-label, 
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.display-field, 
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+.text-box {
+    width: 30em;
+}
+
+.text-box.multi-line {
+    height: 6.5em;
+}
+
+.tri-state {
+    width: 6em;
+}
+
+
+.clr {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+.fltrt {
+    float: right;
+}
+.fltlft {
+    float: left;
+}
+#tblAdmin td {
+    padding: 3px;
+}
+#tblAdmin td.center 
+{
+	text-align:center;    
+}
+span.gi {
+	color: #D7D7D7;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin-right: 6px;
+    position: relative;
+    top: 2px;
+}
+
+#filter-bar .btnSearch {
+    margin-left: 5px;
+}
+button {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    margin-top: 4px;
+    text-decoration: none;
+}
+#content {
+	width:100%;
+}
+/* -- SUBMENU ---------------------------------------*/
+#element-box, #toolbar-box, #submenu-box {
+    padding: 0 10px;
+}
+#submenu li a, #submenu span.nolink {
+    border-right: 1px solid #CCCCCC;
+    color: #808080;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 12px;
+    line-height: 14px;
+    padding: 0 15px;
+}
+#submenu a:hover, #submenu a.active, #submenu span.nolink.active {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #146295;
+}
+#submenu {
+	line-height: 115%;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#submenu li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+/* -- FILTERBOX STYLES ----------------------------- */
+#filter-bar {
+	border-bottom: 1px solid #CCCCCC;
+    color: #000000;
+    float: left;
+    line-height: 22px;
+    margin-bottom: 10px;
+    padding: 5px 0 12px;
+    width: 100%;
+}
+#filter-bar select {
+	margin-left: 5px;
+    margin-top: 5px;
+    max-width: 170px;
+}
+.filter-search-lbl {
+	
+}
+#tblAdmin .itemStatus,
+#tblAdmin .itemFeature {
+	display: inline-block;
+    font-size: 0;
+    height: 16px;
+    width: 16px;
+}
+#tblAdmin .status1 {
+	background-image: url("../images/tick.png");
+}
+#tblAdmin .status0 {
+	background-image: url("../images/publish_x.png");
+}
+
+#tblAdmin .feature1 {
+	background-image: url("../images/featured.png");
+}
+#tblAdmin .feature0 {
+	background-image: url("../images/featured_x.png");
+}
+
+/* Adminlist grids */
+body.v4master {
+    height: 95%;
+	width: auto;
+    min-width: 960px;
+	font-size: 68.8%;
+	background: none repeat scroll 0 0 #FFFFFF;
+    margin: 10px;
+}
+
+#wrapper-c {
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-color: -moz-use-text-color #CCCCCC #CCCCCC;
+    border-image: none;
+    border-right: 1px solid #CCCCCC;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    float: left;
+    margin-bottom: 5px;
+    width: 99.85%;
+	background: none;
+}
+
+table#tblAdmin {
+	width: 100%;
+	border-spacing: 1px;
+	border-collapse: separate;
+	background-color: #f3f3f3;
+	color: #666;
+}
+
+table#tblAdmin a{
+	color: #025A8D;
+	text-decoration:none;
+}
+
+table#tblAdmin  a:hover{
+	text-decoration:underline;
+}
+
+table#tblAdmin img{
+	padding-left: 5px;
+}
+
+table#tblAdmin td,
+table#tblAdmin th {
+	padding: 4px;
+}
+
+table#tblAdmin td {padding-left: 8px;}
+
+table#tblAdmin thead th {
+	text-align: center;
+	background: #f7f7f7;
+	color: #025A8D;
+	border-bottom: 1px solid #CCC;
+	border-left: 1px solid #fff;
+}
+
+table#tblAdmin thead th.left {
+	text-align: left;
+}
+
+table#tblAdmin thead a:hover {
+	text-decoration: none;
+}
+
+table#tblAdmin thead th img {
+	vertical-align: middle;
+	padding-left: 3px;
+}
+
+table#tblAdmin tbody th {
+	font-weight: bold;
+}
+
+table#tblAdmin tbody tr {
+	background-color: #fff;
+	text-align: left;
+}
+
+table#tblAdmin tbody tr.row0:hover td,
+table#tblAdmin tbody tr.row1:hover td	{
+	background-color: #e8f6fe;
+}
+
+table#tblAdmin tbody tr td {
+	background: #fff;
+	border: 1px solid #fff;
+}
+
+table#tblAdmin tbody tr.row1 td {
+	background: #f0f0f0;
+	border-top: 1px solid #FFF;
+}
+
+table#tblAdmin tfoot tr {
+	text-align: center;
+	color: #333;
+}
+
+table#tblAdmin tfoot td,table#tblAdmin tfoot th {
+	background-color: #f7f7f7;
+	border-top: 1px solid #999;
+	text-align: center;
+}
+
+table#tblAdmin td.order {
+	text-align: center;
+	white-space: nowrap;
+	width: 200px;
+}
+
+table#tblAdmin td.order span {
+	float: left;
+	width: 20px;
+	text-align: center;
+	background-repeat: no-repeat;
+	height: 13px;
+}
+
+.pagination {
+	display: inline-block;
+	margin-top: 7px;
+}
+
+
+/* -- Admin Form ----------- */
+.editItem {
+	padding: 3px 0 3px 16px;
+}
+.editItem label {
+	display: inline-block;
+    width: 150px;
+}
+.editItem input, .editItem textarea{
+	width: 260px;
+	border: 1px solid silver;
+}
+.editItem textarea{
+	width: 450px;
+}
+.editItem select{
+	max-width: 260px;
+}
+#editBox {
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    padding: 17px 5px;
+}
+/* -- TOOLBAR ICON STYLES ----------------------------- */
+#toolbarBox {
+	background: none;
+    float: left;
+    width: 100%;
+}
+div.m {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px 10px 10px 10px;
+    color: #666666;
+    margin: 10px;
+    overflow: hidden;
+    padding: 10px 12px;
+}
+.tbTitle {
+	background: url("../images/icon-title-admin.png") no-repeat scroll 0 0 transparent;
+    color: #146295;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 48px;
+    margin: 0;
+    padding: 0 0 0 55px;
+}
+div#tbList {
+	float: right;
+}
+div#tbList span{
+	display: block;
+    float: none;
+    height: 32px;
+    margin: 0 auto;
+    text-align: center;
+}
+#tbList a.toolbar {
+	border: 1px solid #F4F4F4;
+    cursor: pointer;
+    display: block;
+    float: left;
+    padding: 1px 5px;
+    white-space: nowrap;
+	text-align: center;
+}
+#tbList a.toolbar :hover{
+	text-decoration: none;
+}
+div#tbList .btnItem {
+	float: left;
+    margin: 0 1px;
+}
+.btnSpace {
+	border-right: 1px solid #C7C7C7;
+    float: left;
+    height: 50px;
+    width: 2px;
+	margin: 0 3px;
+}
+div#tbList input {
+	background-color: transparent;
+    background-position: center top;
+    background-repeat: no-repeat;
+    border: medium none;
+    height: 32px;
+    padding-top: 32px;
+	cursor: pointer;
+}
+
+.icon-32-send						{	background-image: url(../images/toolbar/icon-32-send.png);	}
+.icon-32-delete						{	background-image: url(../images/toolbar/icon-32-delete.png);	}
+.icon-32-help						{	background-image: url(../images/toolbar/icon-32-help.png);	}
+.icon-32-cancel						{	background-image: url(../images/toolbar/icon-32-cancel.png);	}
+.icon-32-checkin					{	background-image: url(../images/toolbar/icon-32-checkin.png);	}
+.icon-32-options					{	background-image: url(../images/toolbar/icon-32-config.png);	}
+.icon-32-apply						{	background-image: url(../images/toolbar/icon-32-apply.png);	}
+.icon-32-back						{	background-image: url(../images/toolbar/icon-32-back.png);	}
+.icon-32-export						{	background-image: url(../images/toolbar/icon-32-export.png);	}
+.icon-32-forward					{	background-image: url(../images/toolbar/icon-32-forward.png);	}
+.icon-32-save						{	background-image: url(../images/toolbar/icon-32-save.png);	}
+.icon-32-edit						{	background-image: url(../images/toolbar/icon-32-edit.png);	}
+.icon-32-copy						{	background-image: url(../images/toolbar/icon-32-copy.png);	}
+.icon-32-move						{	background-image: url(../images/toolbar/icon-32-move.png);	}
+.icon-32-new						{	background-image: url(../images/toolbar/icon-32-new.png);	}
+.icon-32-upload						{	background-image: url(../images/toolbar/icon-32-upload.png);	}
+.icon-32-assign						{	background-image: url(../images/toolbar/icon-32-publish.png);	}
+.icon-32-html						{	background-image: url(../images/toolbar/icon-32-html.png);	}
+.icon-32-css						{	background-image: url(../images/toolbar/icon-32-css.png);	}
+.icon-32-menus						{	background-image: url(../images/toolbar/icon-32-menu.png);	}
+.icon-32-publish					{	background-image: url(../images/toolbar/icon-32-publish.png);	}
+.icon-32-unblock					{	background-image: url(../images/toolbar/icon-32-unblock.png);	}
+.icon-32-unpublish					{	background-image: url(../images/toolbar/icon-32-unpublish.png);	}
+.icon-32-restore					{	background-image: url(../images/toolbar/icon-32-revert.png);	}
+.icon-32-trash						{	background-image: url(../images/toolbar/icon-32-trash.png);	}
+.icon-32-archive					{	background-image: url(../images/toolbar/icon-32-archive.png);	}
+.icon-32-unarchive					{	background-image: url(../images/toolbar/icon-32-unarchive.png);	}
+.icon-32-preview					{	background-image: url(../images/toolbar/icon-32-preview.png);	}
+.icon-32-default					{	background-image: url(../images/toolbar/icon-32-default.png);	}
+.icon-32-refresh					{	background-image: url(../images/toolbar/icon-32-refresh.png);	}
+.icon-32-save-new					{	background-image: url(../images/toolbar/icon-32-save-new.png);	}
+.icon-32-save-copy					{	background-image: url(../images/toolbar/icon-32-save-copy.png);	}
+.icon-32-error						{	background-image: url(../images/toolbar/icon-32-error.png);	}
+.icon-32-new-style					{	background-image: url(../images/toolbar/icon-32-new-style.png);	}
+.icon-32-delete-style				{	background-image: url(../images/toolbar/icon-32-delete-style.png);	}
+.icon-32-purge						{	background-image: url(../images/toolbar/icon-32-purge.png);	}
+.icon-32-remove						{	background-image: url(../images/toolbar/icon-32-remove.png);	}
+.icon-32-featured					{	background-image: url(../images/toolbar/icon-32-featured.png);	}
+.icon-32-unfeatured					{	background-image: url(../images/toolbar/icon-32-unfeatured.png);	}
+.icon-32-stats						{	background-image: url(../images/toolbar/icon-32-stats.png);	}
+.icon-32-print						{	background-image: url(../images/toolbar/icon-32-print.png);	}
+.toolbar-inactive					{	background-position: 0 32px;  }

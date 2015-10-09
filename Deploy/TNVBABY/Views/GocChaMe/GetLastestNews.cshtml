@@ -1,0 +1,15 @@
+﻿@model IEnumerable<TNVBABY.Web.Models.T_News>
+
+
+@foreach (var item in Model)
+{
+    <h2>
+        <a title="" href="/GocChaMe/Detail/@item.ID/@item.Slug">
+            @item.Title
+        </a>
+    </h2>
+    <p>
+        @Html.Raw(HttpUtility.HtmlDecode(@TNVBABY.Web.Utilities.Common.GetDescriptionHTML(@item.ContentNews)))
+    </p>
+    <hr />
+}

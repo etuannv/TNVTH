@@ -1,0 +1,44 @@
+﻿@using MvcPaging;
+@model IPagedList<TNVTH.Web.Models.T_Album>
+
+<div class="divPanel notop page-content">
+
+    <div class="breadcrumbs">
+        @Html.MvcSiteMap().SiteMapPath()
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12">
+            <h1>Danh sách Album</h1>
+            <hr />
+            <div class="pt-albumbox">
+                @foreach (var item in Model)
+                {
+                    <div class="pt-item">
+                        <div class="pt-album">
+                            <a href="/AlbumClient/Detail/@item.ID/@item.Slug" id=""><img style="border-width:0px;" src="/Content/themes/hoaan/images/folder_images_80.png" title="Day la album 8" id=""></a>
+                        </div>
+                        <a href="/AlbumClient/Detail/@item.ID/@item.Slug"><div class="pt-album-name">@item.Title</div></a>
+                    </div>
+                }
+            </div>
+
+            <div class="row-fluid">
+                <div class="dataTables_paginate paging_bootstrap" style="float:right">
+                    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+                                    .DisplayTemplate("Bootstrap3Pagination")
+                                    .MaxNrOfPages(14)
+                                    .AlwaysAddFirstPageNumber()
+                                    .SetPreviousPageText("← Trước")
+                                    .SetNextPageText("→ Sau")
+                                             .RouteValues(new { })
+                                    )
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div id="footerInnerSeparator"></div>
+</div>
+
+

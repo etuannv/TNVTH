@@ -1,0 +1,30 @@
+﻿@model List<TNVTH.Web.Models.T_Slide>
+
+<script type="text/javascript" src="/Content/themes/hoaan/scripts/Jssor/js/jssor.js"></script>
+<script type="text/javascript" src="/Content/themes/hoaan/scripts/Jssor/js/jssor.slider.js"></script>
+<script>
+
+    jQuery(document).ready(function ($) {
+        var options = {
+
+            $AutoPlay: true,                                   //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+            $DragOrientation: 2,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+            $AutoPlayInterval:@TNVTH.Web.Utilities.Common.GetRandomInt(2000, 9000)
+
+        };
+
+        var jssor_slider1 = new $JssorSlider$("slider1_container_@ViewBag.Subfix", options);
+
+    });
+</script>
+
+
+<div id="slider1_container_@ViewBag.Subfix" style="position: relative; top: 0px; left: 0px; width: @ViewBag.SlideWidth ; height: @ViewBag.SlideHeight;">
+    <!-- Slides Container -->
+    <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: @ViewBag.SlideWidth; height: @ViewBag.SlideHeight; overflow: hidden;">
+        @foreach (var item in Model)
+        {
+            <div><img u="image" src="@item.ImagePath" /></div>
+        }
+    </div>
+</div>

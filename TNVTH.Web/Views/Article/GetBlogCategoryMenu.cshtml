@@ -1,0 +1,13 @@
+﻿@model IEnumerable<TNVTH.Web.Models.T_Tag>
+<div class="panel">
+    <h4>Chuyên mục</h4>
+    <ul class="list-unstyled list-spaces">
+        
+        @foreach(var item in Model)
+        { 
+        <li>
+            <a href="/Article/Blog/@item.ID/@item.Slug">@item.Title</a><br>
+        </li>
+        }
+    </ul>
+</div>

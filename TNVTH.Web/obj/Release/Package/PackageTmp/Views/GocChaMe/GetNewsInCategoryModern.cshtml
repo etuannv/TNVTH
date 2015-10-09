@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TNVBABY.Web.Models.T_News>
+
+@for (int i = 0; i < Model.Count() + (int)ViewBag.Column; i += (int)ViewBag.Column)
+{
+    if (i < Model.Count())
+    {
+        <div class="row-fluid">
+            <ul class="thumbnails">
+                @for (int j = 0; j < (int)ViewBag.Column; j++)
+                {
+                    if (i + j < Model.Count())
+                    {
+                        string scol = "span" + (12 / (int)ViewBag.Column).ToString();
+                        <li class="@scol">
+                            <div class="thumbnail">
+                                <a href="/Article/Detail/@Model.ElementAt(i).ID/@Model.ElementAt(i).Slug">
+                                    @if (string.IsNullOrEmpty(@Model.ElementAt(i + j).AvataImageUrl))
+                                    {
+                                        <img src="/Content/themes/hoaan/images/ImageUnavailable.gif" style="width:300px; height:200px" alt="Ảnh đại điện" title="@Model.ElementAt(i+j).Title" />
+                                    }
+                                    else
+                                    {
+                                        <img src="@Model.ElementAt(i+j).AvataImageUrl" style="width:300px; height:200px" alt="Ảnh đại điện" title="@Model.ElementAt(i+j).Title" />
+                                    }
+
+                                </a>
+                                <div class="caption">
+                                    <h4 style="margin:2px 0; font-size:15px; line-height:12px;"><a style="line-height:20px; font-size:17px;" href="/Article/Detail/@Model.ElementAt(i+j).ID/@Model.ElementAt(i).Slug">@Model.ElementAt(i + j).Title</a></h4>
+                                    <p style="height:60px; overflow:hidden;">@Html.Raw(HttpUtility.HtmlDecode(@TNVBABY.Web.Utilities.Common.GetDescriptionByChar(@Model.ElementAt(i + j).ContentNews, 90)))</p>
+                                    <p style="text-align:center; margin: 0 auto">
+                                        <a style="margin:5px 0px 5px;" class="btn btn-info" href="/Article/Detail/@Model.ElementAt(i+j).ID/@Model.ElementAt(i+j).Slug">Chi tiết</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    }
+}

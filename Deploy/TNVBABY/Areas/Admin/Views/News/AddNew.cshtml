@@ -1,0 +1,168 @@
+﻿@model TNVBABY.Web.Areas.Admin.Models.NewsViewModel
+
+@{
+    ViewBag.Title = "Thêm mới";
+}
+
+@section header {
+    <h1>
+        <span>Tin tức</span>
+        <small>Thêm mới</small>
+    </h1>
+}
+
+<div class="row">
+    @using (Html.BeginForm("AddNew", "News", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <!-- left column -->
+        <div class="col-md-9">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header">
+
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                @Html.ValidationSummary()
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+                    <div class="form-group focus">
+                        <label>Tên</label>
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Nhập tên" })
+                        @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                    <div class="form-group">
+                        <label>Slug</label>
+                        @Html.TextBoxFor(m => m.Slug, new { @class = "form-control", placeholder = "Nhập slug" })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nội dung</label>
+                        @Html.TextAreaFor(m => m.ContentNews, new { @class = "form-control ckeditor", cols = "80", rows = "10", placeholder = "Nhập nội dung tin" })
+                    </div>
+
+                </div><!-- /.box-body -->
+
+            </div><!-- /.box -->
+        </div><!--/.col (left) -->
+    <!-- right column -->
+        <div class="col-md-3">
+            <!-- general form elements -->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Đăng bài</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Trạng thái</label>
+                        <select name="Status" class="form-control">
+                            <option selected value="@TNVBABY.Web.Utilities.Constants.NEWS_STATUS_DRAFT">Lưu tạm</option>
+                            <option value="@TNVBABY.Web.Utilities.Constants.NEWS_STATUS_PEDDING">Chờ xuất bản</option>
+                            <option value="@TNVBABY.Web.Utilities.Constants.NEWS_STATUS_PUBLIC">Xuất bản</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tác giả</label>
+                        @Html.TextBoxFor(m => m.Author, new { @class = "form-control", placeholder = "Nhập tác giả" })
+                    </div>
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    <button style="float:right;" type="submit" name="Published" value="Published" class="btn btn-primary">Đăng bài</button>
+                    <button type="submit" name="Saved" value="Saved" class="btn btn-default">Lưu tạm</button>
+                </div>
+            </div>
+
+            <!-- general form elements -->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Chuyên mục</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <div class="form-group">
+                        <select name="Category" class="form-control">
+                            @foreach (var item in Model.CategoryList)
+                            {
+                                <option value="@item.ID">@item.Title</option>
+                            }
+                        </select>
+                    </div>
+                    
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+            <!-- general form elements -->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Tag</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <input id="tags" class="typeahead form-control" placeholder="Nhập tag" name="tags" type="text"> 
+                </div>
+            </div>
+
+            <!-- general form elements -->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Ảnh đại diện</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <div class="form-group">
+                        <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
+
+                    </div>
+                </div><!-- /.box-body -->
+            </div>
+
+
+        </div>   <!-- /.row -->
+    }
+
+</div>
+    <script src="/Content/themes/admin/dist/js/custome.js"></script>
+    <script src="/Content/ckeditor/ckeditor.js"></script>
+    <script src="/Content/ckfinder/ckfinder.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            CKFinder.setupCKEditor(null, '/Content/ckfinder/');
+        });
+
+
+        $("#Slug").focus(function () {
+            genSlug();
+        });
+
+        function genSlug() {
+            var title = $('#Title').val().trim();
+            var myslug = slug(title);
+            $('#Slug').val(myslug);
+        }
+    </script>
+<script>
+    jQuery(document).ready(function ($) {
+
+        var remoteUrl = "/Tag/GetTag/%QUERY";
+        var myTypeaheadData = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Value'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            limit: 10,
+            remote: {
+                url: remoteUrl,
+                wildcard: '%QUERY'
+                //rateLimitWait: 250,
+                //ajax: { cache: false }
+            }
+        });
+
+        myTypeaheadData.initialize();
+        $('#tags').tagsinput({
+            autocomplete: false,
+            typeaheadjs: {
+                name: 'myTypeaheadData',
+                displayKey: 'Value',
+                valueKey: 'Value',
+                source: myTypeaheadData.ttAdapter()
+            }
+        });
+    });
+</script>

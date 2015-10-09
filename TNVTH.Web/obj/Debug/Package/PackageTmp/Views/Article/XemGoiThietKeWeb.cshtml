@@ -1,0 +1,47 @@
+﻿@model TNVTH.Web.Models.T_News
+
+<header id="head" class="secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <h1>@Model.Title</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- container -->
+<section class="container">
+    <div class="row">
+        <!-- main content -->
+        <section class="col-sm-9 article-content">
+            <div class="entry-meta">                
+            </div>
+            @Html.Raw(HttpUtility.HtmlDecode(Model.ContentNews.Replace(@"<hr />", "")))
+            <br />
+            <div class="col-md-12" style="padding-left:0px; padding-top:0px; padding-bottom:10px; clear:left;">
+                <div class="fb-like" data-href="@Request.Url.ToString()" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                <div class="g-plusone" data-size="medium" data-href="@Request.Url.ToString()"></div>
+                <div class="g-plus" data-action="share" data-annotation="bubble" data-href="@Request.Url.ToString()"></div>
+            </div>
+            <br />
+            <div>@Html.Action("GetTags", new { @id = Model.ID, @taxonomy = TNVTH.Web.Utilities.Constants.TAXONOMY_TAG })</div>
+            <br />
+            <div class="fb-comments" data-href="@Request.Url.ToString()" data-numposts="10" data-width="100%" data-colorscheme="light"></div>
+        </section>
+        <!-- /main -->
+        <!-- Sidebar -->
+        <aside class="col-sm-3 sidebar sidebar-right">
+            <p><h2 style="color:red;">Liên hệ ngay</h2></p>
+            <div class="contact-info">
+                <p><i class="fa fa-user"></i><strong>Nguyễn Văn Tuấn</strong></p>
+                <p><i class="fa fa-phone"></i><strong>0974 528 582</strong></p>
+                <p><i class="fa fa-envelope-o"></i><strong>etuannv@gmail.com</strong></p>
+                <p><i class="fa fa-skype"></i><strong>etuannv</strong></p>
+            </div>
+            @Html.Action("GetOtherGoiThietKe", "Article", new { @limit = 5, exceptId=@Model.ID  })
+        </aside>
+        <!-- /Sidebar -->
+
+    </div>
+</section>

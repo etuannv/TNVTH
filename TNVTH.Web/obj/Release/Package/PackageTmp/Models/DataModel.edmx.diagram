@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cf7f0761a3e44f5294f3e24cfe096fbc" Name="Diagram1">
+        <EntityTypeShape EntityType="TNVBABYModel.T_Adver" Width="1.5" PointX="7.75" PointY="9.875" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Album" Width="1.5" PointX="9.75" PointY="9.875" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Chanel" Width="1.5" PointX="10.75" PointY="1.875" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Config" Width="1.5" PointX="11.75" PointY="9.875" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Game" Width="1.5" PointX="0.75" PointY="11" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Game_Tag" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_HotLink" Width="1.5" PointX="9.75" PointY="12.875" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Menu" Width="1.5" PointX="11.75" PointY="12.875" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_News" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_News_Tag" Width="1.5" PointX="3" PointY="3.625" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Picture" Width="1.5" PointX="3.75" PointY="14" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Picture_Tag" Width="1.5" PointX="6" PointY="6.625" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Slide" Width="1.5" PointX="11" PointY="6.125" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_SlideGroup" Width="1.5" PointX="8.75" PointY="6.625" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Tag" Width="1.5" PointX="0.75" PointY="5.625" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Video" Width="1.5" PointX="0.75" PointY="15" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_Video_Tag" Width="1.5" PointX="3" PointY="9.625" />
+        <EntityTypeShape EntityType="TNVBABYModel.T_UserProfile" Width="1.5" PointX="5.75" PointY="2.125" />
+        <EntityTypeShape EntityType="TNVBABYModel.webpages_Membership" Width="1.5" PointX="12.75" PointY="1.875" />
+        <EntityTypeShape EntityType="TNVBABYModel.webpages_Roles" Width="1.5" PointX="5.75" PointY="9.5" />
+        <EntityTypeShape EntityType="TNVBABYModel.webpages_UsersInRoles" Width="1.5" PointX="8" PointY="2.375" />
+        <AssociationConnector Association="TNVBABYModel.FK_T_Game_Tag_T_Game_Tag2" />
+        <AssociationConnector Association="TNVBABYModel.FK_T_Game_Tag_T_Game_Tag1" />
+        <AssociationConnector Association="TNVBABYModel.FK_T_News_Tag_T_News1" />
+        <AssociationConnector Association="TNVBABYModel.FK_T_News_Tag_T_Tag1" />
+        <AssociationConnector Association="TNVBABYModel.FK_T_Picture_Tag_T_Pic1" />
+        <AssociationConnector Association="TNVBABYModel.FK_T_Picture_Tag_T_Tag1" />
+        <AssociationConnector Association="TNVBABYModel.FK_T_Slide_T_Slide_Group1" />
+        <AssociationConnector Association="TNVBABYModel.FK_T_Video_Tag_T_Tag1" />
+        <AssociationConnector Association="TNVBABYModel.FK_T_Video_Tag_T_Video1" />
+        <AssociationConnector Association="TNVBABYModel.fk_UserId" />
+        <AssociationConnector Association="TNVBABYModel.fk_RoleId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

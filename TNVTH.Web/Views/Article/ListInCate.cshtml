@@ -1,0 +1,159 @@
+﻿@using MvcPaging;
+@model IPagedList<TNVTH.Web.Models.T_News>
+
+@*<div class="divPanel notop page-content">
+
+        <div class="breadcrumbs">
+            @Html.MvcSiteMap().SiteMapPath()
+        </div>
+
+        <div class="row-fluid">
+            <div class="span9">
+                <h1>@ViewBag.CateTitle</h1>
+                <hr />
+                @foreach (var item in Model)
+                {
+                    <div class="row-fluid news-incate">
+                        <div class="span3">
+                            <a href="/Article/Detail/@item.ID/@item.Slug">
+                                @if (string.IsNullOrEmpty(@item.AvataImageUrl))
+                                {
+                                    <img alt="Ảnh đại diện" class="img-polaroid" src="/Content/themes/hoaan/images/ImageUnavailable.gif">
+                                }
+                                else
+                                {
+                                    <img alt="Ảnh đại diện" class="img-polaroid" src="@item.AvataImageUrl">
+                                }
+                            </a>
+                        </div>
+                        <div class="span9">
+                            <a href="/Article/Detail/@item.ID/@item.Slug">
+                                <h4>@item.Title</h4>
+                            </a>
+                            @Html.Raw(HttpUtility.HtmlDecode(@TNVTH.Web.Utilities.Common.GetDescription(@item.ContentNews, 80)))
+                            @Html.ActionLink("Chi tiết", "Detail", "Article", new { @id = item.ID, @slug = item.Slug }, null)
+                        </div>
+                    </div>
+                    <hr />
+                }
+                <div class="row-fluid">
+                    <div class="dataTables_paginate paging_bootstrap" style="float:right">
+                        @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+                                        .DisplayTemplate("Bootstrap3Pagination")
+                                        .MaxNrOfPages(14)
+                                        .AlwaysAddFirstPageNumber()
+                                        .SetPreviousPageText("← Trước")
+                                        .SetNextPageText("→ Sau")
+                                                 .RouteValues(new { })
+                                        )
+                    </div>
+                </div>
+            </div>
+            <!--Edit Sidebar Content here-->
+            <div class="span3">
+                <h3 class="title-full">Thiết bị vận tải</h3>
+                @Html.Action("GetNewsInCategoryDisplayRight", "Article", new { CateId = 111, @Number = 3 })
+                <h3 class="title-full">Máy công trình</h3>
+                @Html.Action("GetNewsInCategoryDisplayRight", "Article", new { CateId = 117, @Number = 3 })
+                <h3 class="title-full">Hình ảnh</h3>
+                @Html.Action("GetSlideOne", "Home", new { id = 6, width = "251px", height = "180px" })
+            </div>
+            <!--/End Sidebar Content -->
+
+        </div>
+        <div id="footerInnerSeparator"></div>
+    </div>*@
+
+
+
+
+
+
+<header id="head" class="secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>@ViewBag.CateTitle</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- container -->
+<section class="container">
+    <div class="row">
+        <!-- main content -->
+        <section class="col-sm-8 maincontent">
+            @foreach (var item in Model)
+            {
+                <div class="row-fluid news-incate">
+                    <div class="span3">
+                        <a href="/Article/Detail/@item.ID/@item.Slug">
+                            @if (string.IsNullOrEmpty(@item.AvataImageUrl))
+                            {
+                                <img alt="Ảnh đại diện" class="img-polaroid" src="/Content/themes/hoaan/images/ImageUnavailable.gif">
+                            }
+                            else
+                            {
+                                <img alt="Ảnh đại diện" class="img-polaroid" src="@item.AvataImageUrl">
+                            }
+                        </a>
+                    </div>
+                    <div class="span9">
+                        <a href="/Article/Detail/@item.ID/@item.Slug">
+                            <h4>@item.Title</h4>
+                        </a>
+                        @Html.Raw(HttpUtility.HtmlDecode(@TNVTH.Web.Utilities.Common.GetDescription(@item.ContentNews, 80)))
+                        @Html.ActionLink("Chi tiết", "Detail", "Article", new { @id = item.ID, @slug = item.Slug }, null)
+                    </div>
+                </div>
+                <hr />
+            }
+            <div class="row-fluid">
+                <div class="dataTables_paginate paging_bootstrap" style="float:right">
+                    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+                                    .DisplayTemplate("Bootstrap3Pagination")
+                                    .MaxNrOfPages(14)
+                                    .AlwaysAddFirstPageNumber()
+                                    .SetPreviousPageText("← Trước")
+                                    .SetNextPageText("→ Sau")
+                                             .RouteValues(new { })
+                                    )
+                </div>
+            </div>
+        </section>
+        <!-- /main -->
+        <!-- Sidebar -->
+        <aside class="col-sm-4 sidebar sidebar-right">
+
+            <div class="panel">
+                <h4>Latest News</h4>
+                <ul class="list-unstyled list-spaces">
+                    <li>
+                        <a href="">Responsive Design</a><br>
+                        <span class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, laborum.</span>
+                    </li>
+                    <li>
+                        <a href="">HTML5, CSS3 and JavaScript</a><br>
+                        <span class="small text-muted">Consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam</span>
+                    </li>
+                    <li>
+                        <a href="">Bootstrap</a><br>
+                        <span class="small text-muted">Eveniet, consequuntur eius repellendus eos aliquid molestiae ea</span>
+                    </li>
+                    <li>
+                        <a href="">Clean Template</a><br>
+                        <span class="small text-muted">Sed, mollitia earum debitis est itaque esse reiciendis amet cupiditate.</span>
+                    </li>
+                    <li>
+                        <a href="">Premium Quality</a><br>
+                        <span class="small text-muted">Voluptate minus illo tenetur sint ab in culpa cumque impedit quibusdam. Saepe, molestias quia.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+        <!-- /Sidebar -->
+
+    </div>
+</section>

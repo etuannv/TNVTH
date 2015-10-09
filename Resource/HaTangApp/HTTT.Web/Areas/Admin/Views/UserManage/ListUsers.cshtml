@@ -1,0 +1,53 @@
+﻿@model IEnumerable<HTTT.HaTangApp.Models.aspnet_Users>
+@{
+    ViewBag.Title = "ListUsers";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>ListUsers</h2>
+<p>
+    @Html.ActionLink("Create New", "CreateUser")
+</p>
+<!-- Nội dung chính -->
+<table id="tblAdmin">
+    <thead>
+        <tr>
+            <th style="width: 40px">
+                STT
+            </th>
+            <th>
+                UserName
+            </th>
+            <th style="width:88px">
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>@{int i = 1;}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.Label((i++).ToString())
+                </td>
+                <td>
+                    @Html.ActionLink(item.UserName, "Edit", new { id = item.UserId })
+                </td>
+                <td>
+                    <a href="@Url.Action("Detail", new { id = item.UserId })">
+                    <img src="@Url.Content("~/Content/Images/icon/icon-16-detail.png")", alt="Detail" />
+                    </a>
+                    <a href="@Url.Action("Edit", new { id = item.UserId })">
+                    <img src="@Url.Content("~/Content/Images/icon/icon-16-edit.png")", alt="Edit" />
+                    </a>
+                    <a href="@Url.Action("Delete", new { id = item.UserId })">
+                    <img src="@Url.Content("~/Content/Images/icon/icon-16-delete.png")", alt="Delete" />
+                    </a>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!-- Phân trang -->
+<div class="pagination">
+</div>

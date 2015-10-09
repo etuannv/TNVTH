@@ -1,0 +1,92 @@
+﻿<footer id="footer">
+
+    <div class="container">
+        <div class="row">
+            <div class="footerbottom">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footerwidget">
+                        <h4>
+                            <a href="/Video" style="color:#fff">Danh mục Video</a>
+                        </h4>
+                        <div class="menu-course">
+                            @Html.Action("GetCategoryMenuFooter", new { @taxonomy = TNVBABY.Web.Utilities.Constants.TAXONOMY_VIDEO, @limit = 5 })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footerwidget">
+                        <h4>
+                            Danh mục Game
+                        </h4>
+                        <div class="menu-course">
+                            @Html.Action("GetCategoryMenuFooter", new { @taxonomy = TNVBABY.Web.Utilities.Constants.TAXONOMY_GAME, @limit = 5 })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footerwidget">
+                        <h4>
+                            <a href="/TranhTo" style="color:#fff">Danh mục Tranh tô</a> 
+                        </h4>
+                        <div class="menu-course">
+                            @Html.Action("GetCategoryMenuFooter", new { @taxonomy = TNVBABY.Web.Utilities.Constants.TAXONOMY_PIC, @limit = 5 })
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footerwidget">
+                        <h4>
+                            Danh mục Góc cha mẹ
+                        </h4>
+                        <div class="menu-course">
+                            @Html.Action("GetCategoryMenuFooter", new { @taxonomy = TNVBABY.Web.Utilities.Constants.TAXONOMY_CATEGORY, @limit = 5 })
+                        </div>
+                    </div>
+                            
+                    </div><!-- end widget -->
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <!--CLEAR FLOATS-->
+    </div>
+    <br /><br />
+    <div class="footer2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 panel">
+                    <div class="panel-body">
+                        <p class="simplenav">
+                            <a href="/">Trang chủ</a> |
+                            <a href="/Video">Video</a> |
+                            <a href="/Game">Trò chơi</a> |
+                            <a href="/TranhTo">Tranh tô</a> |
+                            <a href="/GocChaMe">Góc cha mẹ</a> |
+                        </p>
+                    </div>
+                </div>
+                <div class="cold-md-6 panel">
+                    <div class="panel-body">
+                        <p class="text-right">
+                             Trực tuyến: @ApplicationInstance.Application["OnlineVisitors"]
+                             -  Tổng truy cập: @ApplicationInstance.Application["TotalVisitors"] 
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="col-md-12 panel">
+                    <div class="panel-body">
+                        <p style="padding-top:10px; color:#cccccc;">
+                            Tất cả hình ảnh, video, trò chơi trên đây thuộc chủ sở hữu của nhân vật, cửa người đăng video, <a href="http://danhchothieunhi.com" rel="author">http://danhchothieunhi.com</a> tổng hợp cho mục đích sưu tầm. Vui lòng không sử dụng cho các mục đích khác.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /row of panels -->
+        </div>
+    </div>
+</footer>

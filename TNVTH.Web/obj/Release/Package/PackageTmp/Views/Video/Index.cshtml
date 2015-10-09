@@ -1,0 +1,40 @@
+﻿<div class="row">
+    <!-- Article main content -->
+    <article class="col-md-9 maincontent">
+        @Html.MvcSiteMap().SiteMapPath()
+        <hr style="margin-top:5px" />
+
+        @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Video_Center1.ToString() })
+        <h2>Yêu thích</h2>
+        @Html.Action("GetFavouriteVideo", new { @limit = 8 })
+        <hr />
+        @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Video_Center2.ToString() })
+        <h2>Mới nhất</h2>
+        @Html.Action("GetLastVideo", new { @limit = 8 })
+        @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Video_Center3.ToString() })
+    </article>
+    <!-- /Article -->
+    <!-- Sidebar -->
+    <aside class="col-md-3 sidebar sidebar-left">
+        <div class="row panel">
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Video_Right1.ToString() })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetHotLinkRight", "Home", new { @type = TNVBABY.Web.Utilities.HotLinkType.Video.ToString(), @limit = 20 })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Video_Right2.ToString() })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                <h3>Loại Video</h3>
+                @Html.Action("GetVideoCategoryMenu", new { @limit = 20 })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Video_Right3.ToString() })
+            </div>
+        </div>
+    </aside>
+    <!-- /Sidebar -->
+
+</div>

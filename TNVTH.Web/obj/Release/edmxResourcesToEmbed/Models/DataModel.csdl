@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TNVBABYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TNVBABYEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T_Adver" EntityType="TNVBABYModel.T_Adver" />
+    <EntitySet Name="T_Album" EntityType="TNVBABYModel.T_Album" />
+    <EntitySet Name="T_Chanel" EntityType="TNVBABYModel.T_Chanel" />
+    <EntitySet Name="T_Config" EntityType="TNVBABYModel.T_Config" />
+    <EntitySet Name="T_Game" EntityType="TNVBABYModel.T_Game" />
+    <EntitySet Name="T_Game_Tag" EntityType="TNVBABYModel.T_Game_Tag" />
+    <EntitySet Name="T_HotLink" EntityType="TNVBABYModel.T_HotLink" />
+    <EntitySet Name="T_Menu" EntityType="TNVBABYModel.T_Menu" />
+    <EntitySet Name="T_News" EntityType="TNVBABYModel.T_News" />
+    <EntitySet Name="T_News_Tag" EntityType="TNVBABYModel.T_News_Tag" />
+    <EntitySet Name="T_Picture" EntityType="TNVBABYModel.T_Picture" />
+    <EntitySet Name="T_Picture_Tag" EntityType="TNVBABYModel.T_Picture_Tag" />
+    <EntitySet Name="T_Slide" EntityType="TNVBABYModel.T_Slide" />
+    <EntitySet Name="T_SlideGroup" EntityType="TNVBABYModel.T_SlideGroup" />
+    <EntitySet Name="T_Tag" EntityType="TNVBABYModel.T_Tag" />
+    <EntitySet Name="T_Video" EntityType="TNVBABYModel.T_Video" />
+    <EntitySet Name="T_Video_Tag" EntityType="TNVBABYModel.T_Video_Tag" />
+    <EntitySet Name="T_UserProfile" EntityType="TNVBABYModel.T_UserProfile" />
+    <EntitySet Name="webpages_Membership" EntityType="TNVBABYModel.webpages_Membership" />
+    <EntitySet Name="webpages_Roles" EntityType="TNVBABYModel.webpages_Roles" />
+    <EntitySet Name="webpages_UsersInRoles" EntityType="TNVBABYModel.webpages_UsersInRoles" />
+    <AssociationSet Name="FK_T_Game_Tag_T_Game_Tag2" Association="TNVBABYModel.FK_T_Game_Tag_T_Game_Tag2">
+      <End Role="T_Game" EntitySet="T_Game" />
+      <End Role="T_Game_Tag" EntitySet="T_Game_Tag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Game_Tag_T_Game_Tag1" Association="TNVBABYModel.FK_T_Game_Tag_T_Game_Tag1">
+      <End Role="T_Tag" EntitySet="T_Tag" />
+      <End Role="T_Game_Tag" EntitySet="T_Game_Tag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_News_Tag_T_News1" Association="TNVBABYModel.FK_T_News_Tag_T_News1">
+      <End Role="T_News" EntitySet="T_News" />
+      <End Role="T_News_Tag" EntitySet="T_News_Tag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_News_Tag_T_Tag1" Association="TNVBABYModel.FK_T_News_Tag_T_Tag1">
+      <End Role="T_Tag" EntitySet="T_Tag" />
+      <End Role="T_News_Tag" EntitySet="T_News_Tag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Picture_Tag_T_Pic1" Association="TNVBABYModel.FK_T_Picture_Tag_T_Pic1">
+      <End Role="T_Picture" EntitySet="T_Picture" />
+      <End Role="T_Picture_Tag" EntitySet="T_Picture_Tag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Picture_Tag_T_Tag1" Association="TNVBABYModel.FK_T_Picture_Tag_T_Tag1">
+      <End Role="T_Tag" EntitySet="T_Tag" />
+      <End Role="T_Picture_Tag" EntitySet="T_Picture_Tag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Slide_T_Slide_Group1" Association="TNVBABYModel.FK_T_Slide_T_Slide_Group1">
+      <End Role="T_SlideGroup" EntitySet="T_SlideGroup" />
+      <End Role="T_Slide" EntitySet="T_Slide" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Video_Tag_T_Tag1" Association="TNVBABYModel.FK_T_Video_Tag_T_Tag1">
+      <End Role="T_Tag" EntitySet="T_Tag" />
+      <End Role="T_Video_Tag" EntitySet="T_Video_Tag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Video_Tag_T_Video1" Association="TNVBABYModel.FK_T_Video_Tag_T_Video1">
+      <End Role="T_Video" EntitySet="T_Video" />
+      <End Role="T_Video_Tag" EntitySet="T_Video_Tag" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UserId" Association="TNVBABYModel.fk_UserId">
+      <End Role="UserProfile" EntitySet="T_UserProfile" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RoleId" Association="TNVBABYModel.fk_RoleId">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="T_Adver">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PublishDate" Type="DateTime" Precision="0" />
+    <Property Name="UnpublishDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_Album">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_Chanel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ByUser" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="UChanelID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LastFeedDate" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="Enable" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="FeedIndex" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_Game">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="ViewCount" Type="Int32" Nullable="false" />
+    <Property Name="Embed" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="ThumbUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_Game_Tag" Relationship="TNVBABYModel.FK_T_Game_Tag_T_Game_Tag2" FromRole="T_Game" ToRole="T_Game_Tag" />
+    <Property Name="Description" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_Game_Tag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TagID" Type="Int32" Nullable="false" />
+    <Property Name="GameID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_Game" Relationship="TNVBABYModel.FK_T_Game_Tag_T_Game_Tag2" FromRole="T_Game_Tag" ToRole="T_Game" />
+    <NavigationProperty Name="T_Tag" Relationship="TNVBABYModel.FK_T_Game_Tag_T_Game_Tag1" FromRole="T_Game_Tag" ToRole="T_Tag" />
+  </EntityType>
+  <EntityType Name="T_HotLink">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Target" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Menu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="ParentPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="Enable" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_News">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Slug" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AvataImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsHotNews" Type="Boolean" />
+    <Property Name="ContentNews" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PublishTime" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="T_News_Tag" Relationship="TNVBABYModel.FK_T_News_Tag_T_News1" FromRole="T_News" ToRole="T_News_Tag" />
+  </EntityType>
+  <EntityType Name="T_News_Tag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TagID" Type="Int32" Nullable="false" />
+    <Property Name="NewsID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_News" Relationship="TNVBABYModel.FK_T_News_Tag_T_News1" FromRole="T_News_Tag" ToRole="T_News" />
+    <NavigationProperty Name="T_Tag" Relationship="TNVBABYModel.FK_T_News_Tag_T_Tag1" FromRole="T_News_Tag" ToRole="T_Tag" />
+  </EntityType>
+  <EntityType Name="T_Picture">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Enable" Type="Boolean" Nullable="false" />
+    <Property Name="ForGender" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ViewCount" Type="Int32" Nullable="false" />
+    <Property Name="ThumbUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_Picture_Tag" Relationship="TNVBABYModel.FK_T_Picture_Tag_T_Pic1" FromRole="T_Picture" ToRole="T_Picture_Tag" />
+    <Property Name="Description" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_Picture_Tag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TagID" Type="Int32" Nullable="false" />
+    <Property Name="PictureID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_Picture" Relationship="TNVBABYModel.FK_T_Picture_Tag_T_Pic1" FromRole="T_Picture_Tag" ToRole="T_Picture" />
+    <NavigationProperty Name="T_Tag" Relationship="TNVBABYModel.FK_T_Picture_Tag_T_Tag1" FromRole="T_Picture_Tag" ToRole="T_Tag" />
+  </EntityType>
+  <EntityType Name="T_Slide">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Enable" Type="Boolean" />
+    <Property Name="GroupID" Type="Int32" />
+    <Property Name="Click" Type="Int32" Nullable="false" />
+    <Property Name="Target" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_SlideGroup" Relationship="TNVBABYModel.FK_T_Slide_T_Slide_Group1" FromRole="T_Slide" ToRole="T_SlideGroup" />
+  </EntityType>
+  <EntityType Name="T_SlideGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_Slide" Relationship="TNVBABYModel.FK_T_Slide_T_Slide_Group1" FromRole="T_SlideGroup" ToRole="T_Slide" />
+  </EntityType>
+  <EntityType Name="T_Tag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Taxonomy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_Game_Tag" Relationship="TNVBABYModel.FK_T_Game_Tag_T_Game_Tag1" FromRole="T_Tag" ToRole="T_Game_Tag" />
+    <NavigationProperty Name="T_News_Tag" Relationship="TNVBABYModel.FK_T_News_Tag_T_Tag1" FromRole="T_Tag" ToRole="T_News_Tag" />
+    <NavigationProperty Name="T_Picture_Tag" Relationship="TNVBABYModel.FK_T_Picture_Tag_T_Tag1" FromRole="T_Tag" ToRole="T_Picture_Tag" />
+    <NavigationProperty Name="T_Video_Tag" Relationship="TNVBABYModel.FK_T_Video_Tag_T_Tag1" FromRole="T_Tag" ToRole="T_Video_Tag" />
+  </EntityType>
+  <EntityType Name="T_Video">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YoutubeID" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Liked" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+    <Property Name="Disliked" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+    <Property Name="ViewCount" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+    <Property Name="Enable" Type="Boolean" Nullable="false" />
+    <Property Name="LastCheckAliveDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDead" Type="Boolean" Nullable="false" />
+    <Property Name="IsPlaylist" Type="Boolean" Nullable="false" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
+    <Property Name="UChanelID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="UCategoryId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UDuration" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ULiked" Type="Decimal" Precision="12" Scale="0" />
+    <Property Name="UDisliked" Type="Decimal" Precision="12" Scale="0" />
+    <Property Name="UViewCount" Type="Decimal" Precision="12" Scale="0" />
+    <Property Name="UTags" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="UDefaultLanguage" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Ulatitude" Type="Decimal" Precision="9" Scale="6" />
+    <Property Name="Ulongitude" Type="Decimal" Precision="9" Scale="6" />
+    <Property Name="Ualtitude" Type="Decimal" Precision="9" Scale="6" />
+    <Property Name="UThumbnail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_Video_Tag" Relationship="TNVBABYModel.FK_T_Video_Tag_T_Video1" FromRole="T_Video" ToRole="T_Video_Tag" />
+    <Property Name="LastRelatedFeedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_Video_Tag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TagID" Type="Int32" Nullable="false" />
+    <Property Name="VideoID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_Tag" Relationship="TNVBABYModel.FK_T_Video_Tag_T_Tag1" FromRole="T_Video_Tag" ToRole="T_Tag" />
+    <NavigationProperty Name="T_Video" Relationship="TNVBABYModel.FK_T_Video_Tag_T_Video1" FromRole="T_Video_Tag" ToRole="T_Video" />
+  </EntityType>
+  <EntityType Name="T_UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="56" FixedLength="false" Unicode="true" />
+    <Property Name="Fullname" Type="String" MaxLength="56" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="webpages_UsersInRoles" Relationship="TNVBABYModel.fk_UserId" FromRole="UserProfile" ToRole="webpages_UsersInRoles" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsConfirmed" Type="Boolean" />
+    <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="webpages_UsersInRoles" Relationship="TNVBABYModel.fk_RoleId" FromRole="webpages_Roles" ToRole="webpages_UsersInRoles" />
+  </EntityType>
+  <EntityType Name="webpages_UsersInRoles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UserProfile" Relationship="TNVBABYModel.fk_UserId" FromRole="webpages_UsersInRoles" ToRole="UserProfile" />
+    <NavigationProperty Name="webpages_Roles" Relationship="TNVBABYModel.fk_RoleId" FromRole="webpages_UsersInRoles" ToRole="webpages_Roles" />
+  </EntityType>
+  <Association Name="FK_T_Game_Tag_T_Game_Tag2">
+    <End Type="TNVBABYModel.T_Game" Role="T_Game" Multiplicity="1" />
+    <End Type="TNVBABYModel.T_Game_Tag" Role="T_Game_Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Game">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_Game_Tag">
+        <PropertyRef Name="GameID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Game_Tag_T_Game_Tag1">
+    <End Type="TNVBABYModel.T_Tag" Role="T_Tag" Multiplicity="1" />
+    <End Type="TNVBABYModel.T_Game_Tag" Role="T_Game_Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Tag">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_Game_Tag">
+        <PropertyRef Name="TagID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_News_Tag_T_News1">
+    <End Type="TNVBABYModel.T_News" Role="T_News" Multiplicity="1" />
+    <End Type="TNVBABYModel.T_News_Tag" Role="T_News_Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_News">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_News_Tag">
+        <PropertyRef Name="NewsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_News_Tag_T_Tag1">
+    <End Type="TNVBABYModel.T_Tag" Role="T_Tag" Multiplicity="1" />
+    <End Type="TNVBABYModel.T_News_Tag" Role="T_News_Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Tag">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_News_Tag">
+        <PropertyRef Name="TagID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Picture_Tag_T_Pic1">
+    <End Type="TNVBABYModel.T_Picture" Role="T_Picture" Multiplicity="1" />
+    <End Type="TNVBABYModel.T_Picture_Tag" Role="T_Picture_Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Picture">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_Picture_Tag">
+        <PropertyRef Name="PictureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Picture_Tag_T_Tag1">
+    <End Type="TNVBABYModel.T_Tag" Role="T_Tag" Multiplicity="1" />
+    <End Type="TNVBABYModel.T_Picture_Tag" Role="T_Picture_Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Tag">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_Picture_Tag">
+        <PropertyRef Name="TagID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Slide_T_Slide_Group1">
+    <End Type="TNVBABYModel.T_SlideGroup" Role="T_SlideGroup" Multiplicity="0..1" />
+    <End Type="TNVBABYModel.T_Slide" Role="T_Slide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_SlideGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_Slide">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Video_Tag_T_Tag1">
+    <End Type="TNVBABYModel.T_Tag" Role="T_Tag" Multiplicity="1" />
+    <End Type="TNVBABYModel.T_Video_Tag" Role="T_Video_Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Tag">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_Video_Tag">
+        <PropertyRef Name="TagID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Video_Tag_T_Video1">
+    <End Type="TNVBABYModel.T_Video" Role="T_Video" Multiplicity="1" />
+    <End Type="TNVBABYModel.T_Video_Tag" Role="T_Video_Tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Video">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="T_Video_Tag">
+        <PropertyRef Name="VideoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UserId">
+    <End Type="TNVBABYModel.T_UserProfile" Role="UserProfile" Multiplicity="1" />
+    <End Type="TNVBABYModel.webpages_UsersInRoles" Role="webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RoleId">
+    <End Type="TNVBABYModel.webpages_Roles" Role="webpages_Roles" Multiplicity="1" />
+    <End Type="TNVBABYModel.webpages_UsersInRoles" Role="webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

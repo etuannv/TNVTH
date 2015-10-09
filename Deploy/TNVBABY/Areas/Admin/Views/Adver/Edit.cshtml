@@ -1,0 +1,81 @@
+﻿@model TNVBABY.Web.Models.T_Adver
+
+@{
+    ViewBag.Title = "Thêm mới";
+}
+
+@section header {
+    <h1>
+        <span>Quảng cáo</span>
+        <small>Thêm mới</small>
+    </h1>
+}
+
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header">
+
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("Edit", "Adver", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.ValidationSummary();
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+                    <div class="form-group focus">
+                        <label>Tiêu đề</label>
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Nhập Tiêu đề" })
+                        @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                    <div class="form-group">
+                        <label>Mô tả</label>
+                        @Html.TextBoxFor(m => m.Description, new { @class = "form-control", placeholder = "Nhập Mô tả" })
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày đăng</label>
+                        @Html.TextBoxFor(m => m.PublishDate, "{0:dd/MM/yyyy}", new { @class = "form-control datepicker", placeholder = "Nhập Ngày đăng" })
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày hạ</label>
+                        @Html.TextBoxFor(m => m.UnpublishDate, "{0:dd/MM/yyyy}", new { @class = "form-control datepicker", placeholder = "Nhập Ngày hạ" })
+                    </div>
+                    <div class="form-group">
+                        <label>Liên kết</label>
+                        @Html.TextBoxFor(m => m.Link, new { @class = "form-control", placeholder = "Nhập Liên kết" })
+                    </div>
+                    <div class="form-group">
+                        <label>Ảnh</label>
+                        @Html.HiddenFor(m => m.ImagePath)
+                        <input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />
+                        <img src="@Model.ImagePath" alt="Ảnh">
+                    </div>
+
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    @Html.ActionLink(
+                                        "Quay lại",
+                                        "List",
+                                        "Adver",
+                                            new { @class = "btn btn-primary" })
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            }
+        </div><!-- /.box -->
+        <!-- Form Element sizes -->
+    </div><!--/.col (left) -->
+</div>   <!-- /.row -->
+<script src="~/Content/themes/admin/dist/js/custome.js"></script>
+
+<link href="@Url.Content("~/Content/themes/plugins/datepicker/datepicker3.css")" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Content/themes/plugins/datepicker/bootstrap-datepicker.js")" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".datepicker").datepicker();
+        //Date range picker with time picker
+    });
+</script>

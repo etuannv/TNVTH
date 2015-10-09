@@ -1,0 +1,20 @@
+﻿@model IEnumerable<TNVBABY.Web.Models.T_News>
+
+@foreach (var item in Model)
+{
+    <div class="">
+        <a href="/GocChaMe/Detail/@item.ID/@item.Slug">
+            @if (!string.IsNullOrEmpty(@item.AvataImageUrl))
+            {
+                <img alt="Ảnh đại diện" class="img-polaroid" src="@item.AvataImageUrl">
+            }
+
+        </a>
+    </div>
+    <div class="news-desc">
+        <a href="/GocChaMe/Detail/@item.ID/@item.Slug">
+            <h5>@item.Title</h5>
+        </a>
+    </div>
+    <hr />
+}

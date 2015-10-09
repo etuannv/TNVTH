@@ -1,0 +1,35 @@
+﻿@model IEnumerable<TNVTH.Web.Models.T_News>
+
+<h2 class="text-center"><span><a href="/Article/GoiThietKeWebsite" class="nolink">Gói thiết kế website</a></span></h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="newsBox">
+
+                <div class="thumbnail">
+                    <a href="/Article/Detail/@item.ID/@item.Slug" class="btn-inline">
+                        <figure><img src="@item.AvataImageUrl" alt=""></figure>
+                    </a>
+                    <div class="caption maxheight2">
+                        <div class="box_inner">
+                            <div class="box">
+                                <a href="/Article/Detail/@item.ID/@item.Slug" class="btn-inline">
+                                    <p class="title"><h4>@item.Title</h4></p>
+                                </a>
+                                <p>@Html.Raw(HttpUtility.HtmlDecode(@TNVTH.Web.Utilities.Common.GetDescription(@item.ContentNews, 40)))</p>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+    <div class="col-lg-12 text-center">
+        <a href="/Article/GoiThietKeWebsite" class="btn btn-mini">Xem thêm</a>
+    </div>
+</div>

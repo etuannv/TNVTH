@@ -1,0 +1,133 @@
+﻿@using MvcPaging;
+@model IPagedList<TNVBABY.Web.Models.T_News>
+@*@model IEnumerable<TNVBABY.Data.DatabaseModel.T_News>*@
+
+@{
+    ViewBag.Title = "Danh sách tin";
+}
+
+@section header {
+    <h1>
+        Tin tức
+        <small>Danh sách tin</small>
+    </h1>
+}
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header">
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div role="grid" class="dataTables_wrapper form-inline" id="example1_wrapper">
+                    <div class="row">
+                        <div class="row-left">
+                            <div id="example1_length" class="dataTables_length">
+                                <label>
+                                    @Html.ActionLink(
+                                            "Thêm mới",
+                                            "AddNew",
+                                            "News",
+                                            new { @taxonomy = ViewData["taxonomy"] },
+                                            new { @class = "btn btn-block btn-primary" })
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row-right">
+                            <div class="dataTables_filter" id="example1_filter">
+                                @using (Html.BeginForm("List", "News", FormMethod.Get))
+                                {
+                                    <label>
+                                        <button type="submit" class="btn btn-block btn-primary">Tìm kiếm</button>
+                                    </label>
+                                    <label>
+                                        @Html.TextBox("search", ViewData["search"] as string, new { @class = "form-control" })
+                                    </label>
+                                    <label>
+                                        @Html.DropDownList("CateID", null, "--------- Tất cả ------", new { @class = "form-control", onchange = "this.form.submit();" })
+                                    </label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-striped" id="example1" aria-describedby="example1_info">
+                        <thead>
+                            <tr role="row">
+                                <th>Tên</th>
+                                <th>Slug</th>
+                                <th>Tác giả</th>
+                                <th>Ngày tạo</th>
+                                <th>Trạng thái</th>
+                                <th>ID</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Tên</th>
+                                <th>Slug</th>
+                                <th>Tác giả</th>
+                                <th>Ngày tạo</th>
+                                <th>Trạng thái</th>
+                                <th>ID</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                            @foreach (var item in Model)
+                            {
+                                <tr class="odd">
+                                    <td>
+                                        <strong>
+                                            @Html.ActionLink(
+                                            item.Title,
+                                            "Edit",
+                                            "News",
+                                              new { @id = item.ID },
+                                             new { @class = "" })
+                                        </strong>
+                                    </td>
+                                    <td>@Html.DisplayFor(modelItem => item.Slug)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+                                    <td>@if(item.Status == TNVBABY.Web.Utilities.Constants.NEWS_STATUS_DRAFT){ <span>Lưu tạm</span>}
+                                        @if (item.Status == TNVBABY.Web.Utilities.Constants.NEWS_STATUS_PEDDING){<span>Chờ xuất bản</span>}
+                                        @if (item.Status == TNVBABY.Web.Utilities.Constants.NEWS_STATUS_PUBLIC){ <span>Xuất bản</span>}
+                                    </td>
+                                    <td width="5%">@Html.DisplayFor(modelItem => item.ID)</td>
+                                    <td width="3%">@Html.ActionLink("Xóa", "Delete", new { id = item.ID })</td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="row-left">
+
+                        </div>
+                        <div class="row-right">
+                            <div class="dataTables_paginate paging_bootstrap">
+                                @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+                                    .DisplayTemplate("Bootstrap3Pagination")
+                                    .MaxNrOfPages(14)
+                                    .AlwaysAddFirstPageNumber()
+                                    .SetPreviousPageText("← Trước")
+                                    .SetNextPageText("→ Sau")
+                                    .RouteValues(new { @search = ViewData["search"] })
+                                    )
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+</div><!-- /.row -->
+<!-- AdminLTE for demo purposes -->
+@*<script src="/Content/themes/dist/js/demo.js" type="text/javascript"></script>*@
+<!-- page script -->
+<script type="text/javascript">
+
+</script>
+

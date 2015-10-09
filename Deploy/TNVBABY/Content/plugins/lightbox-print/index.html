@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Lightbox JS v2.51 | Test Page</title>
+
+	<link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="js/lightbox.js" type="text/javascript"></script>
+
+	<style type="text/css">
+		body{ color: #333; font: 13px 'Lucida Grande', Verdana, sans-serif;	}
+		small {font-size:13px;}
+	</style>
+
+</head>
+<body>
+
+
+<h1><a href="http://www.lokeshdhakar.com/projects/lightbox2/">Lightbox JS <em>v2.51</em></a> with print button</h1>
+<p><a href="http://www.lokeshdhakar.com">by Lokesh Dhakar</a><br/><a href="http://www.tse-webdesign.be">print-button by Vincent Verbruggen</a></p>
+
+<h2>Update for Opera <small>(2012-07-31)</small></h2>
+<p>
+	Some people were having issues in Opera since it does not allow you to print the contents of an iframe without the rest of the parent page.<br/>
+	I've added additional code to work around this problem in Opera, but it's not that elegant: a new window will be created when pressing the
+	<em>Print</em>-button. The user himself needs to close the window after printing.
+</p>
+
+<h2>Download</h2>
+<p>
+	You can download the newest version from: <a href="http://sandbox.tse-webdesign.be/lightbox-print/lightbox-print.zip">http://sandbox.tse-webdesign.be/lightbox-print/lightbox-print.zip</a>
+</p>
+
+<h2>Version</h2>
+<p>
+	<strong>This is the most recent version of Lightbox where a Print-button has been added.<br/>
+	This newest version uses an iframe to print the image shown in the Lightbox, which is more reliable than using a print stylesheet.</strong><br/>
+</p>
+<h3>Older versions</h3>
+<ul>
+	<li><a href="http://sandbox.tse-webdesign.be/lightbox-print/v2.05">Lightbox JS v2.05 + Print button (using an iframe)</a></li>
+	<li><a href="http://sandbox.tse-webdesign.be/lightbox-print/v1">Lightbox JS v2.04 + Print button (using a print stylesheet)</a></li>
+</ul>
+
+<h2>Example</h2>
+<p>
+	<a href="images/examples/image-1.jpg" rel="lightbox[roadtrip]"><img src="images/examples/thumb-1.jpg" alt="" /></a>
+	<a href="images/examples/image-2.jpg" rel="lightbox[roadtrip]" title="With a caption"><img src="images/examples/thumb-2.jpg" alt="" /></a>
+	<a href="images/examples/image-3.jpg" rel="lightbox[roadtrip]"><img src="images/examples/thumb-3.jpg" alt="" /></a>
+	<a href="images/examples/image-4.jpg" rel="lightbox[roadtrip]"><img src="images/examples/thumb-4.jpg" alt="" /></a>
+	<a href="images/examples/image-5.jpg" rel="lightbox[roadtrip]"><img src="images/examples/thumb-5.jpg" alt="" /></a>
+	<a href="images/examples/image-6.jpg" rel="lightbox[roadtrip]"><img src="images/examples/thumb-6.jpg" alt="" /></a>
+</p>
+
+<h2>How to Use:</h2>
+<h3>Part 1 - Setup</h3>
+<ol>
+<li>Lightbox v2.51 uses the jQuery framework. You will need to include these Javascript files in your webpage.
+<pre style='color:#000000;background:#f1f0f0;'><span style='color:#806030; '>&lt;</span>script src<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js</span><span style='color:#800000; '>"</span><span style='color:#806030; '>></span><span style='color:#806030; '>&lt;</span><span style='color:#806030; '>/</span>script<span style='color:#806030; '>></span>
+<span style='color:#806030; '>&lt;</span>script src<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>js/lightbox.js</span><span style='color:#800000; '>"</span> type<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>text/javascript</span><span style='color:#800000; '>"</span><span style='color:#806030; '>></span><span style='color:#806030; '>&lt;</span><span style='color:#806030; '>/</span>script<span style='color:#806030; '>></span>
+</pre>
+</li>
+<li>Include the Lightbox CSS file.
+<pre style='color:#000000;background:#f1f0f0;'><span style='color:#806030; '>&lt;</span>link rel<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>stylesheet</span><span style='color:#800000; '>"</span> href<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>css/lightbox.css</span><span style='color:#800000; '>"</span> type<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>text/css</span><span style='color:#800000; '>"</span> media<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>screen</span><span style='color:#800000; '>"</span> <span style='color:#806030; '>/</span><span style='color:#806030; '>></span>
+</pre>
+</li>
+<li>Check the CSS and make sure that the images referenced in the stylesheet point to the correct location. Also, make sure <code>loading.gif</code> and <code>close.png</code> referenced near the top of <code>lightbox.js</code> are in the right location.</li>
+</ol>
+<h3>Part 2 - Activate</h3>
+<ol>
+<li>Add a <code>rel="lightbox"</code> attribute to any link tag to activate the lightbox. For example:
+<pre style='color:#000000;background:#f1f0f0;'><span style='color:#806030; '>&lt;</span>a href<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>images/examples/image-1.jpg</span><span style='color:#800000; '>"</span> rel<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>lightbox</span><span style='color:#800000; '>"</span> title<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>my caption</span><span style='color:#800000; '>"</span><span style='color:#806030; '>></span>image #1<span style='color:#806030; '>&lt;</span><span style='color:#806030; '>/</span>a<span style='color:#806030; '>></span>
+</pre>
+<em>Optional: </em>Use the <code>title</code> attribute if you want to show a caption.</li>
+<li>If you have a set of related images that you would like to group, follow step one but additionally include a group name between square brackets in the rel attribute. For example: 
+<pre style='color:#000000;background:#f1f0f0;'><span style='color:#806030; '>&lt;</span>a href<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>images/image-1.jpg</span><span style='color:#800000; '>"</span> rel<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>lightbox[roadtrip]</span><span style='color:#800000; '>"</span><span style='color:#806030; '>></span>image #1<span style='color:#806030; '>&lt;</span><span style='color:#806030; '>/</span>a<span style='color:#806030; '>></span>
+<span style='color:#806030; '>&lt;</span>a href<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>images/image-2.jpg</span><span style='color:#800000; '>"</span> rel<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>lightbox[roadtrip]</span><span style='color:#800000; '>"</span><span style='color:#806030; '>></span>image #2<span style='color:#806030; '>&lt;</span><span style='color:#806030; '>/</span>a<span style='color:#806030; '>></span>
+<span style='color:#806030; '>&lt;</span>a href<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>images/image-3.jpg</span><span style='color:#800000; '>"</span> rel<span style='color:#806030; '>=</span><span style='color:#800000; '>"</span><span style='color:#e60000; '>lightbox[roadtrip]</span><span style='color:#800000; '>"</span><span style='color:#806030; '>></span>image #3<span style='color:#806030; '>&lt;</span><span style='color:#806030; '>/</span>a<span style='color:#806030; '>></span>
+</pre>
+No limits to the number of image sets per page or how many images are allowed in each set. Go nuts!</li>
+</ol>	
+
+
+</body>
+</html>

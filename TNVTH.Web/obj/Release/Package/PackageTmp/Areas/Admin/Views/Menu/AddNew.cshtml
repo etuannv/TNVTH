@@ -1,0 +1,85 @@
+﻿@model TNVBABY.Web.Models.T_Menu
+
+@{
+    ViewBag.Title = "Thêm mới";
+}
+
+@section header {
+    <h1>
+        <span>Menu</span>
+        <small>Thêm mới</small>
+    </h1>
+}
+
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header">
+
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("AddNew", "Menu", FormMethod.Post))
+            {
+                @Html.ValidationSummary();
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+                    <div class="form-group focus">
+                        <label>Menu cha</label>
+                        @Html.DropDownList("ParentID", null, "--- Chọn cấp cha ---", new { @class = "form-control" })
+                    </div>
+                    <div class="form-group ">
+                        <label>Tên</label>
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Nhập tên" })
+                        @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                    <div class="form-group">
+                        <label>Slug</label>
+                        @Html.TextBoxFor(m => m.Slug, new { @class = "form-control", placeholder = "Nhập slug" })
+                        @Html.ValidationMessageFor(model => model.Slug)
+                    </div>
+                    <div class="form-group">
+                        <label>Thứ tự</label>
+                        @Html.TextBoxFor(m => m.Order, new { @class = "form-control", placeholder = "Nhập thứ tự hiển thị" })
+                    </div>
+                    <div class="form-group">
+                        <label>Mô tả</label>
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = "3", placeholder = "Nhập mô tả" })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Đường dẫn</label>
+                        @Html.TextBoxFor(m => m.Link, new { @class = "form-control", placeholder = "Nhập đường dẫn" })
+                    </div>
+                    <div class="form-group">
+                        <label>Hoạt động</label>
+                        @Html.CheckBoxFor(m => m.Enable, new { @class = "", @checked="true" })
+                    </div>
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    @Html.ActionLink(
+                                        "Quay lại",
+                                        "List",
+                                        "Menu",
+                                            null,
+                                            new { @class = "btn btn-primary" })
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            }
+        </div><!-- /.box -->
+        <!-- Form Element sizes -->
+    </div><!--/.col (left) -->
+</div>   <!-- /.row -->
+<script src="/Content/themes/admin/dist/js/custome.js"></script>
+<script type="text/javascript">
+    $("#Slug").focus(function () {
+        genSlug();
+    });
+
+    function genSlug() {
+        var title = $('#Title').val().trim();
+        var myslug = slug(title);
+        $('#Slug').val(myslug);
+    }
+</script>

@@ -1,0 +1,142 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>@Html.MvcSiteMap().SiteMapTitle()</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="@Html.Raw(HttpUtility.HtmlDecode(@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Description))">
+    
+    @if (@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes.ContainsKey("keywords"))
+    {
+        <meta name="keywords" content="@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes["keywords"]">
+    }
+    <meta property="og:title" content="@Html.MvcSiteMap().SiteMapTitle()" />
+    <meta property="og:site_name" content="Dành cho thiếu nhi" />
+    <meta property="og:url" content="@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Url" />
+    <meta property="og:description" content="@Html.Raw(HttpUtility.HtmlDecode(@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Description))" />
+    <meta property="fb:app_id" content="672215042894811" />
+    @if (@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes.ContainsKey("type"))
+    {
+        <meta name="og:type" content="@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes["type"]">
+    }
+    
+    @if (@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes.ContainsKey("og:image"))
+    {
+        <meta property="og:image" content="@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes["og:image"]">
+    }
+    
+    <meta name="author" content="http://tuvantinhoc.vn">
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    @Html.MvcSiteMap().MetaRobotsTag()
+    @Html.MvcSiteMap().CanonicalTag()
+
+    <link rel="favicon" href="/Content/themes/Kiddo/images/favicon.png">
+    <link rel="stylesheet" href="/Content/themes/Kiddo/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/themes/Kiddo/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/themes/Kiddo/css/bootstrap-theme.css" media="screen">
+    <link rel="stylesheet" href="/Content/themes/Kiddo/css/style.css">
+    <link rel='stylesheet' id='camera-css' href='/Content/themes/Kiddo/css/camera.css' type='text/css' media='all'>
+    <script type='text/javascript' src='/Content/themes/Kiddo/js/jquery.min.js'></script>
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        function adClick(id) {
+            var clickurl = "/Home/AdvertismentClick/" + id;
+            jQuery.ajax({
+                url: clickurl,
+                contentType: 'application/html; charset=utf-8',
+                type: 'GET',
+                dataType: 'json'
+            });
+        }
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/Content/themes/Kiddo/js/html5shiv.js"></script>
+    <script src="/Content/themes/Kiddo/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Button for smallest screens -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand" href="/">
+                    <img src="/Content/themes/Kiddo/images/logo.png" alt="Techro HTML5 template">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                @Html.Action("GetTopMenu", "Home")
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <!-- /.navbar -->
+    @if (ViewData["hasSlide"] != null)
+    {
+        @Html.Action("GetSlide", "Home")
+    }
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    @Html.Action("GetFooter", "Home")
+
+
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="/Content/themes/Kiddo/js/modernizr-latest.js"></script>
+    <script type='text/javascript' src='/Content/themes/Kiddo/js/fancybox/jquery.fancybox.pack.js'></script>
+
+    <script type='text/javascript' src='/Content/themes/Kiddo/js/jquery.mobile.customized.min.js'></script>
+    <script type='text/javascript' src='/Content/themes/Kiddo/js/jquery.easing.1.3.js'></script>
+    <script type='text/javascript' src='/Content/themes/Kiddo/js/camera.min.js'></script>
+    <script src="/Content/themes/Kiddo/js/bootstrap.min.js"></script>
+    <script src="/Content/themes/Kiddo/js/custom.js"></script>
+    <script>
+
+        //jQuery(document).ready(function ($) {
+        //    //set navigation
+        //    var path = window.location.pathname;
+        //    path = path.replace(/\/$/, "");
+        //    path = decodeURIComponent(path);
+
+        //    $(".nav a").each(function () {
+        //        var href = $(this).attr('href');
+        //        if (path.substring(0, href.length) === href) {
+        //            $(this).closest('li').addClass('active');
+        //            $(".nav li:first-child").removeClass('active');
+        //        }
+        //    });
+        //    if (path == "" || path == null) {
+        //        //forcus on fist
+        //        $(".nav > li:first-child").addClass('active');
+        //    }
+        //});
+    </script>
+
+
+
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.4&appId=672215042894811";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script src="https://apis.google.com/js/platform.js" async defer>
+        { lang: 'vi' }
+    </script>
+</body>
+
+</html>

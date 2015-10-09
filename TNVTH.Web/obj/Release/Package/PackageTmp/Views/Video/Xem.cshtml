@@ -1,0 +1,72 @@
+﻿@model TNVBABY.Web.Models.T_Video
+<div class="row">
+    <!-- Article main content -->
+    <article class="col-md-9 maincontent">
+        @Html.MvcSiteMap().SiteMapPath()
+        <hr style="margin-top:3px; margin-bottom:9px;" />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="embed-responsive embed-responsive-16by9" style="margin: 0 auto;">
+                    @if (@Model.IsPlaylist)
+                    {
+                        <iframe type='text/html' class="embed-responsive-item" frameborder="0" allowfullscreen src="//www.youtube.com/embed/videoseries?list=@Model.YoutubeID&autoplay=1&wmode=transparent&amp;iv_load_policy=3&amp;modestbranding=1&amp;theme=light"></iframe>
+                    }
+                    else
+                    {
+                        <iframe class="embed-responsive-item" frameborder="0" allowfullscreen src="//www.youtube.com/embed/@Model.YoutubeID?autoplay=1&wmode=transparent&amp;iv_load_policy=3&amp;modestbranding=1&amp;theme=light"></iframe>
+                    }
+                    <!-- YouTube Embed - TechAirlines.com -->
+
+                </div>
+                <div style="background: #f9f9f9; margin-top: 2px; padding: 5px; overflow: hidden; border-bottom: 1px solid #eaeaea; ">
+                    <h3 style="color:#444; margin-top:13px;">@Model.Title</h3>
+                    <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10" style="padding:0px;">
+                        <div class="fb-like" data-href="@Request.Url.ToString()" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                        <div class="g-plusone" data-size="medium" data-href="@Request.Url.ToString()"></div>
+                        <div class="g-plus" data-action="share" data-annotation="bubble" data-href="@Request.Url.ToString()"></div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2" style="padding:0px;">
+                        <div class="" style="padding:0px; padding-right:2px; float:right; text-align:right;"><i class="fa fa-eye"></i><span class="watch-view-count"> @Model.ViewCount</span></div>
+                    </div>
+                </div>
+
+                @*<div class="col-lg-1"><a title="Tải về" href="/Home/DownloadYoutube/@Model.YoutubeID"><i class="fa fa-download download-button"></i></a></div>*@
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <hr style="clear: both; border-style:none;" />
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_XemVideo_Center1 })
+                @Html.Action("GetRelatedVideo", new { @limit = 20 })
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_XemVideo_Center2 })
+            </div>
+        </div>
+    </article>
+    <!-- /Article -->
+    <!-- Sidebar -->
+    <aside class="col-md-3 sidebar sidebar-left">
+        <div class="row panel">
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_XemVideo_Right1.ToString() })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetHotLinkRight", "Home", new { @type = TNVBABY.Web.Utilities.HotLinkType.Video.ToString(), @limit = 20 })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_XemVideo_Right2 })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                <h3>Loại Video</h3>
+                @Html.Action("GetVideoCategoryMenu")
+                
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_XemVideo_Right3 })
+            </div>
+        </div>
+    </aside>
+    <!-- /Sidebar -->
+
+</div>

@@ -1,0 +1,7 @@
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\bin\HTTT.HaTangApp.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\bin\HTTT.HaTangApp.pdb
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\bin\EntityFramework.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\bin\EntityFramework.xml
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\obj\Debug\HTTT.HaTangApp.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\obj\Debug\HTTT.HaTangApp.pdb

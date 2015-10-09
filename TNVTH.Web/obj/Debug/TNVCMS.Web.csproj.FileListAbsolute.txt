@@ -1,0 +1,197 @@
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\obj\Debug\TNVCMS.Web.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\obj\Debug\TNVCMS.Web.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\TNVCMS.Web.dll.config
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\TNVCMS.Web.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\TNVCMS.Web.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Antlr3.Runtime.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.Core.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\EntityFramework.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Microsoft.Data.Edm.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Microsoft.Data.OData.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\MvcSiteMapProvider.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Newtonsoft.Json.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Net.Http.Formatting.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Spatial.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Helpers.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Http.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Http.OData.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Http.WebHost.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Mvc.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Optimization.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Razor.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.Deployment.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.Razor.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\TNVCMS.Domain.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\TNVCMS.Utilities.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\WebGrease.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\WebMatrix.Data.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\WebMatrix.WebData.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\TNVCMS.Domain.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\TNVCMS.Utilities.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\MvcSiteMapProvider.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\EntityFramework.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Newtonsoft.Json.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Net.Http.Formatting.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Helpers.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Http.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Http.WebHost.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Mvc.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Razor.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.Deployment.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.Razor.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\WebMatrix.Data.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\WebMatrix.WebData.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.Core.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Web.Http.OData.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Microsoft.Data.Edm.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\Microsoft.Data.OData.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\System.Spatial.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\de\Microsoft.Data.Edm.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\es\Microsoft.Data.Edm.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\fr\Microsoft.Data.Edm.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\it\Microsoft.Data.Edm.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\ja\Microsoft.Data.Edm.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\ko\Microsoft.Data.Edm.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\ru\Microsoft.Data.Edm.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\de\Microsoft.Data.OData.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\es\Microsoft.Data.OData.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\fr\Microsoft.Data.OData.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\it\Microsoft.Data.OData.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\ja\Microsoft.Data.OData.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\ko\Microsoft.Data.OData.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\ru\Microsoft.Data.OData.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\de\System.Spatial.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\es\System.Spatial.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\fr\System.Spatial.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\it\System.Spatial.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\ja\System.Spatial.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\ko\System.Spatial.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\ru\System.Spatial.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\zh-Hans\System.Spatial.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\zh-Hant\System.Spatial.resources.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\obj\Debug\TNVCMS.Web.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\MvcSiteMapProvider.WebActivator.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\WebActivatorEx.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\MvcSiteMapProvider.WebActivator.xml
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\MvcPaging.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\EntityFramework.SqlServer.dll
+c:\users\administrator\documents\visual studio 2013\Projects\TNVCMS\TNVCMS.Web\bin\EntityFramework.SqlServer.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\TNVCMS.Web.dll.config
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\TNVCMS.Web.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\TNVCMS.Web.pdb
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Antlr3.Runtime.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\CKFinder.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.AspNet.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.Core.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OAuth.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OpenId.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\EntityFramework.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\EntityFramework.SqlServer.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Microsoft.Data.Edm.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Microsoft.Data.OData.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\MvcPaging.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\MvcSiteMapProvider.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\MvcSiteMapProvider.WebActivator.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Newtonsoft.Json.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Net.Http.Formatting.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Spatial.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Helpers.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Http.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Http.OData.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Http.WebHost.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Mvc.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Optimization.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Razor.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.Deployment.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.Razor.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\TNVCMS.Domain.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\TNVCMS.Utilities.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\WebGrease.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\WebMatrix.Data.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\WebMatrix.WebData.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\TNVCMS.Domain.pdb
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\TNVCMS.Utilities.pdb
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\CKFinder.pdb
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\EntityFramework.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\EntityFramework.SqlServer.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\MvcSiteMapProvider.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\MvcSiteMapProvider.WebActivator.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Newtonsoft.Json.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Net.Http.Formatting.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Helpers.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Http.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Http.WebHost.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Mvc.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Razor.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.Deployment.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.WebPages.Razor.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\WebMatrix.Data.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\WebMatrix.WebData.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.AspNet.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.Core.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OAuth.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OpenId.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Web.Http.OData.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Microsoft.Data.Edm.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\Microsoft.Data.OData.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\System.Spatial.xml
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\de\Microsoft.Data.Edm.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\es\Microsoft.Data.Edm.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\it\Microsoft.Data.Edm.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\de\Microsoft.Data.OData.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\es\Microsoft.Data.OData.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\fr\Microsoft.Data.OData.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\it\Microsoft.Data.OData.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\ja\Microsoft.Data.OData.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\ko\Microsoft.Data.OData.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\ru\Microsoft.Data.OData.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\de\System.Spatial.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\es\System.Spatial.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\fr\System.Spatial.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\it\System.Spatial.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\ja\System.Spatial.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\ko\System.Spatial.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\ru\System.Spatial.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\zh-Hans\System.Spatial.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\bin\zh-Hant\System.Spatial.resources.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\obj\Debug\TNVCMS.Web.csprojResolveAssemblyReference.cache
+C:\GitHub\TNVCMS\TNVCMS.Web\obj\Debug\TNVCMS.Web.dll
+C:\GitHub\TNVCMS\TNVCMS.Web\obj\Debug\TNVCMS.Web.pdb

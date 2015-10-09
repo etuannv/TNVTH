@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cf7f0761a3e44f5294f3e24cfe096fbc" Name="Diagram1">
+        <EntityTypeShape EntityType="TNVTHModel.T_Adver" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TNVTHModel.T_Album" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="TNVTHModel.T_Config" Width="1.5" PointX="6.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TNVTHModel.T_HotLink" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TNVTHModel.T_Menu" Width="1.5" PointX="9.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TNVTHModel.T_News" Width="1.5" PointX="2.75" PointY="4" />
+        <EntityTypeShape EntityType="TNVTHModel.T_News_Tag" Width="1.5" PointX="5" PointY="4.75" />
+        <EntityTypeShape EntityType="TNVTHModel.T_Slide" Width="1.5" PointX="8" PointY="1" />
+        <EntityTypeShape EntityType="TNVTHModel.T_SlideGroup" Width="1.5" PointX="5.75" PointY="1.375" />
+        <EntityTypeShape EntityType="TNVTHModel.T_Tag" Width="1.5" PointX="2.75" PointY="8.125" />
+        <EntityTypeShape EntityType="TNVTHModel.T_UserProfile" Width="1.5" PointX="0.75" PointY="0.875" />
+        <EntityTypeShape EntityType="TNVTHModel.webpages_Membership" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TNVTHModel.webpages_OAuthMembership" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TNVTHModel.webpages_Roles" Width="1.5" PointX="0.75" PointY="4.25" />
+        <EntityTypeShape EntityType="TNVTHModel.webpages_UsersInRoles" Width="1.5" PointX="3" PointY="1.125" />
+        <AssociationConnector Association="TNVTHModel.FK_T_News_Tag_T_News1" />
+        <AssociationConnector Association="TNVTHModel.FK_T_News_Tag_T_Tag1" />
+        <AssociationConnector Association="TNVTHModel.FK_T_Slide_T_Slide_Group1" />
+        <AssociationConnector Association="TNVTHModel.fk_UserId" />
+        <AssociationConnector Association="TNVTHModel.fk_RoleId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

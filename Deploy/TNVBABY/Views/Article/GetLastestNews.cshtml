@@ -1,0 +1,10 @@
+﻿@model IEnumerable<TNVBABY.Web.Models.T_News>
+
+
+@foreach (var item in Model)
+{
+   <p>
+        <a title="" href="/Article/Detail/@item.ID/@item.Slug">@item.Title</a><br>
+        <span style="text-transform:none;"></span>
+    </p>
+}

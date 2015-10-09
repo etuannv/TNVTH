@@ -1,0 +1,53 @@
+﻿@model TNVBABY.Web.Models.T_Picture
+
+@{
+    ViewBag.Title = "Thêm ảnh vào Picture";
+}
+
+@section header {
+    <h1>
+        <span>Picture @Model.Title</span>
+        <small>Thêm ảnh</small>
+    </h1>
+}
+
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header">
+
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("UploadImage", "Picture", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.ValidationSummary();
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+                    <div class="form-group focus">
+                        @Html.HiddenFor(m => m.Slug)
+                        @Html.HiddenFor(n => n.ID)
+                        <label>Chọn file ảnh</label>
+                        @*<input type="file" name="ImageData" id="ImageData" onchange="fileCheck(this);" />*@
+                        <input id="fileupload" type="file" name="files[]" multiple data-url="@Url.Action("Upload","Picture")">
+                    </div>
+
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    @Html.ActionLink(
+                                        "Quay lại",
+                                        "List",
+                                        "Picture",
+                                            new { @class = "btn btn-primary" })
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            }
+        </div><!-- /.box -->
+        <!-- Form Element sizes -->
+    </div><!--/.col (left) -->
+</div>   <!-- /.row -->
+<script src="~/Content/themes/admin/dist/js/custome.js"></script>
+
+<script src="/Content/themes/admin/multi-upload/js/jquery.fileupload.js"></script>
+

@@ -1,0 +1,40 @@
+﻿<div class="row">
+    <!-- Article main content -->
+    <article class="col-md-10 maincontent">
+        @Html.MvcSiteMap().SiteMapPath()
+        <hr style="margin-top:5px" />
+        <h2>Mới nhất</h2>
+        @Html.Action("GetLastPicture", new { @limit = 6 })
+        <hr />
+        <h2>Yêu thích nhất</h2>
+        @Html.Action("GetFavouritePicture", new { @limit = 6 })
+    </article>
+    <!-- /Article -->
+    <!-- Sidebar -->
+    <aside class="col-md-2 sidebar sidebar-left">
+        <div class="row panel">
+
+            <div class="col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_TranhTo_Right1.ToString() })
+                <h3>Có gì HOT</h3>
+                @Html.Action("GetHotLinkRight", "Home", new { @type = TNVBABY.Web.Utilities.HotLinkType.Picture.ToString(), @limit = 20 })
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_TranhTo_Right2.ToString() })
+            </div>
+
+            <div class="col-xs-12">
+                <h3>Loại tranh tô</h3>
+                @Html.Action("GetCategoryMenu")
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_TranhTo_Right3.ToString() })
+            </div>
+
+            <div class="col-xs-12">
+                <h3>Dành cho</h3>
+                <p>@Html.ActionLink("Bé trai", "DanhCho", new { @gender = @TNVBABY.Web.Utilities.Constants.GENDER_MALE.ToString() })
+                <p>@Html.ActionLink("Bé gái", "DanhCho", new { @gender = @TNVBABY.Web.Utilities.Constants.GENDER_FEMALE.ToString() })
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_TranhTo_Right4.ToString() })
+            </div>
+        </div>
+    </aside>
+    <!-- /Sidebar -->
+
+</div>

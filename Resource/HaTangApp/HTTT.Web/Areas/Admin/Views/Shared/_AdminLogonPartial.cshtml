@@ -1,0 +1,8 @@
+﻿@if(Request.IsAuthenticated) {
+    <text>Welcome <strong>@User.Identity.Name</strong>!
+    [ @Html.ActionLink("Log Off", "LogOff", new { area = "", controller = "Account", returnUrl = "/Account/Logon"})]</text>
+}
+else
+{
+    @:[ @Html.ActionLink("Log On", "LogOn", new { area = "", controller = "Account", returnUrl = ViewContext.HttpContext.Request.Url.PathAndQuery }) ]
+}

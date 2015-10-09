@@ -1,0 +1,75 @@
+﻿@model TNVTH.Web.Models.T_HotLink
+
+@{
+    ViewBag.Title = "Thêm mới";
+}
+
+@section header {
+    <h1>
+        <span>HotLink</span>
+        <small>Thêm mới</small>
+    </h1>
+}
+
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header">
+
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("AddNew", "HotLink", FormMethod.Post))
+            {
+                @Html.ValidationSummary();
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+                    <div class="form-group focus">
+                        
+                            <label>Loại Hot Link</label>
+                            <select id="Type" name="Type" class="form-control">
+                                @foreach (TNVTH.Web.Utilities.HotLinkType item in Enum.GetValues(typeof(TNVTH.Web.Utilities.HotLinkType)))
+                                {
+                                    <option value="@item.ToString()">@item.ToString()</option>
+                                }
+                            </select>
+                            @Html.ValidationMessageFor(model => model.Type)
+                        </div>
+                    <div class="form-group">
+                        <label>Tiêu đề</label>
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Nhập Tiêu đề" })
+                    </div>
+                    <div class="form-group">
+                        <label>Link</label>
+                        @Html.TextBoxFor(m => m.Link, new { @class = "form-control", placeholder = "Link" })
+                    </div>
+                    <div class="form-group">
+                        <label>Target</label>
+                        <select id="Target" name="Target" class="form-control">
+                            @foreach (TNVTH.Web.Utilities.LinkTarGet item in Enum.GetValues(typeof(TNVTH.Web.Utilities.LinkTarGet)))
+                            {
+                                <option value="@item.ToString()">@item.ToString()</option>
+                            }
+                        </select>
+                        @Html.ValidationMessageFor(model => model.Target)
+                    </div>
+                    <div class="form-group">
+                        <label>Enabled</label>
+                        @Html.CheckBoxFor(m => m.Enabled, new { })
+                    </div>
+                    
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    @Html.ActionLink(
+                                        "Quay lại",
+                                        "List",
+                                        "HotLink",
+                                            new { @class = "btn btn-primary" })
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            }
+        </div><!-- /.box -->
+        <!-- Form Element sizes -->
+    </div><!--/.col (left) -->
+</div>   <!-- /.row -->

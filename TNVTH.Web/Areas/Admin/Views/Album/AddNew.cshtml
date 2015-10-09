@@ -1,0 +1,51 @@
+﻿@model TNVTH.Web.Models.T_Album
+
+@{
+    ViewBag.Title = "Thêm mới";
+}
+
+@section header {
+    <h1>
+        <span>Album</span>
+        <small>Thêm mới</small>
+    </h1>
+}
+
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header">
+
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("AddNew", "Album", FormMethod.Post))
+            {
+                @Html.ValidationSummary();
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+                    <div class="form-group focus">
+                        <label>Tiêu đề</label>
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Nhập Tiêu đề" })
+                        @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                    <div class="form-group">
+                        <label>Mô tả</label>
+                        @Html.TextBoxFor(m => m.Description, new { @class = "form-control", placeholder = "Nhập Mô tả" })
+                    </div>
+
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    @Html.ActionLink(
+                                        "Quay lại",
+                                        "List",
+                                        "Slide",
+                                            new { @class = "btn btn-primary" })
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            }
+        </div><!-- /.box -->
+        <!-- Form Element sizes -->
+    </div><!--/.col (left) -->
+</div>   <!-- /.row -->

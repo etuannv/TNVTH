@@ -1,0 +1,22 @@
+﻿@model IEnumerable<TNVTH.Web.Models.T_News>
+
+
+<div class="panel">
+    <a href="/Article/GoiThietKeWebsite" class="nolink"><h3><span>Gói thiết kế khác</span></h3></a>
+        @foreach (var item in Model)
+{
+    <a href="/Article/Detail/@item.ID/@item.Slug" class="btn-inline">
+        <div class="col-sm-12">
+            <figure><img src="@item.AvataImageUrl" alt=""></figure>
+            <div class="caption maxheight2">
+                <div class="box_inner">
+                    <div class="box">
+                        <p class="title"><h4>@item.Title</h4></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+}
+    <a href="/Article/GoiThietKeWebsite" class=""><span>Xem thêm >></span></a>
+</div>

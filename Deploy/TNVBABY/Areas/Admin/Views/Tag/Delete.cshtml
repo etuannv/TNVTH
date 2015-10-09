@@ -1,0 +1,68 @@
+﻿@model TNVBABY.Web.Areas.Admin.Models.TagViewModel
+
+@{
+    ViewBag.Title = "Xóa";
+}
+
+@section header {
+    <h1>
+        @if (ViewData["taxonomy"].ToString() == TNVBABY.Web.Utilities.Constants.TAXONOMY_CATEGORY)
+        {<span>Danh mục tin</span>}
+        else if (ViewData["taxonomy"].ToString() == TNVBABY.Web.Utilities.Constants.TAXONOMY_TAG)
+        {<span>Tag</span>}
+        else if (ViewData["taxonomy"].ToString() == TNVBABY.Web.Utilities.Constants.TAXONOMY_PIC)
+        {<span>Danh mục Tranh tô</span>}
+        else if (ViewData["taxonomy"].ToString() == TNVBABY.Web.Utilities.Constants.TAXONOMY_VIDEO)
+        {<span>Danh mục Video</span>}
+        <small>Xóa</small>
+    </h1>
+}
+
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">Bạn có chắc chắn muốn xóa ? </h3>
+            </div><!-- /.box-header -->
+
+
+            <div class="box-body">
+                <div class="form-group">
+                    <label>Tên</label>
+                    @Html.DisplayFor(m => m.Title, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Slug</label>
+                    @Html.DisplayFor(m => m.Slug, new { @class = "form-control" })
+                </div>
+                @if (ViewData["taxonomy"].ToString() == TNVBABY.Web.Utilities.Constants.TAXONOMY_CATEGORY)
+                {
+                    <div class="form-group">
+                        <label>Cấp cha</label>
+                        @Html.DropDownListFor(m => m.ParentID, new SelectList(Model.TagList, "ID", "Title", 1), "Chọn cấp cha", new { @class = "form-control", @disabled = "true" })
+                    </div>
+
+                }
+
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    @Html.DisplayFor(m => m.Description, new { @class = "form-control" })
+                </div>
+            </div><!-- /.box-body -->
+            <!-- form start -->
+            @using (Html.BeginForm("Delete", "Tag", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.ID)
+
+                <div class="box-footer">
+                    <a class="btn btn-primary" onclick="history.go(-1); return false;" href="#">Quay lại</a>
+                    <button type="submit" class="btn btn-primary">Xóa</button>
+                </div>
+            }
+        </div><!-- /.box -->
+        <!-- Form Element sizes -->
+    </div><!--/.col (left) -->
+</div>   <!-- /.row -->

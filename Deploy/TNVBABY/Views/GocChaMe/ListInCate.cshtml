@@ -1,0 +1,54 @@
+﻿@using MvcPaging;
+@model IPagedList<TNVBABY.Web.Models.T_News>
+
+<div class="row">
+    <!-- Article main content -->
+    <article class="col-md-10 maincontent">
+        @Html.MvcSiteMap().SiteMapPath()
+        <hr style="margin-top:5px" />
+        @foreach (var item in Model)
+        {
+            <h2>
+                <a title="" href="/GocChaMe/Detail/@item.ID/@item.Slug">
+                    @item.Title
+                </a>
+            </h2>
+            <p>
+                @Html.Raw(HttpUtility.HtmlDecode(@TNVBABY.Web.Utilities.Common.GetDescriptionHTML(@item.ContentNews)))
+            </p>
+            <hr />
+        }
+
+        <div class="dataTables_paginate paging_bootstrap" style="float:right">
+            @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+                                    .DisplayTemplate("Bootstrap3Pagination")
+                                    .MaxNrOfPages(14)
+                                    .AlwaysAddFirstPageNumber()
+                                    .SetPreviousPageText("← Trước")
+                                    .SetNextPageText("→ Sau")
+                                             .RouteValues(new { })
+                                    )
+        </div>
+    </article>
+    <!-- /Article -->
+    <!-- Sidebar -->
+    <aside class="col-md-2 sidebar sidebar-left">
+        <div class="row panel">
+
+            <div class="col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_GocChaMe_Right1.ToString() })
+                <h3>Có gì HOT</h3>
+                @Html.Action("GetHotLinkRight", "Home", new { @type = TNVBABY.Web.Utilities.HotLinkType.ForParent.ToString(), @limit = 20 })
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_GocChaMe_Right2.ToString() })
+            </div>
+
+            <div class="col-xs-12">
+                <h3>Chuyên mục</h3>
+                @Html.Action("GetArticleCategoryMenu")
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_GocChaMe_Right3.ToString() })
+            </div>
+        </div>
+    </aside>
+    <!-- /Sidebar -->
+
+</div>

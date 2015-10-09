@@ -1,0 +1,34 @@
+﻿@model List<TNVTH.Web.Models.AlbumViewModel>
+@{
+    ViewBag.Title = "Danh sách Album ảnh";
+}
+
+<div class="divPanel notop page-content">
+
+    <div class="breadcrumbs">
+        @Html.MvcSiteMap().SiteMapPath()
+    </div>
+    <!--/Begin Main Content Area here-->
+    <div class="row-fluid">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <ul class="thumbnails">
+                <li class="span3">
+                    <div class="thumbnail">
+                        <a href="@Url.Action("Detail", "Album", new { @id = Model[i].Name})">
+                            <img src="@Url.Content("~/Content/FileManager/images/Thang 5/123.png")" />
+                        </a>
+                        <div class="caption">
+                            <h3>Thumbnail label</h3>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+        }
+        }
+    </div>
+    <!--/End Main Content Area here-->
+    <div id="footerInnerSeparator"></div>
+</div>

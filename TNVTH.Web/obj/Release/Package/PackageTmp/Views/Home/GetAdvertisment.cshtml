@@ -1,0 +1,6 @@
+﻿@model List<TNVBABY.Web.Models.T_Slide>
+@foreach (var item in Model)
+{
+    <p><a href="@item.Link" target="@item.Target" onclick="adClick(@item.ID);" title="@item.Title"><img src="@item.ImagePath" /></a></p>
+}
+

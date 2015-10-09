@@ -1,0 +1,15 @@
+﻿@model List<TNVBABY.Web.Models.ImageOfTranhToModel>
+
+
+
+<ul class="list-unstyled video-list-thumbs row">
+    @foreach (var item in Model)
+    {
+        <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <a rel="lightbox[@item.PictureSlug]" href="@item.FullPath" title="Click để xem và in">
+                <img style="width:100%; max-height:300px;" class="img-responsive" src="@item.ThumbPath">
+            </a>
+        </li>
+    }
+ </ul>
+

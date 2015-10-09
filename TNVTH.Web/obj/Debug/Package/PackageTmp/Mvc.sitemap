@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+
+
+  <mvcSiteMapNode title="Tư vấn tin học" controller="Home" action="Index" description="Tư vấn tin hoc chuyên thiết kế website vĩnh yên, vĩnh phúc; cung cấp các dịch vụ SEO website, hositng, domain, Digital Maketing, quảng cáo google, sửa chữa máy tính tại nhà vĩnh yên, vĩnh phúc" metaRobotsValues="index follow noodp noydir">
+    <mvcSiteMapNode title="Quản trị" area="Admin" controller="Start" action="Index" metaRobotsValues="noindex nofollow">
+      <mvcSiteMapNode title="Đổi mật khẩu" controller="Account" action="Manage" preservedRouteParameters="search" description="Đổi mật khẩu" />
+      <mvcSiteMapNode title="Thêm mới tin" controller="News" action="AddNew" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Bài viết" controller="News" action="List" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Chuyên mục" controller="Tag" action="List" taxonomy="category" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Tag" controller="Tag" action="List" taxonomy="tag" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Danh sách slide" controller="Slide" action="List" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Dánh sách nhóm slie" controller="SlideGroup" action="List" metaRobotsValues="noindex nofollow"/>
+      <mvcSiteMapNode title="Danh sách Album" controller="Album" action="List" metaRobotsValues="noindex nofollow"/>
+    </mvcSiteMapNode>
+
+
+    <mvcSiteMapNode title="Liên hệ" controller="Home" action="LienHe" description="Liên hệ Trung tâm Tư vấn tin học. Chuyên thiết kế website vĩnh yên, vĩnh phúc. Chuyên hosting, tên miên. Chuyên SEO website. Chuyên quảng cáo trên mạng xã hội. Chuyên sửa chữa máy tính tại nhà Vĩnh Yên, Vĩnh Phúc" />
+    <mvcSiteMapNode title="Các gói thiết kế website" controller="Article" action="GoiThietKeWebsite" description="Các gói thiết kế website cung cấp bởi Tư vấn tin học. Các gói website đã được phát triển, cung cấp cho khách hàng chạy ổn định" />
+    <mvcSiteMapNode title="Siêu thị website" controller="Article" action="SieuThiWeb" description="Tập hợp các mẫu thiết kế website đẹp bắt mắt cung cấp bởi Tư vấn tin học. Khách hàng dễ dàng lựa chọn mẫu website cho mình" />
+    <mvcSiteMapNode title="Thiết kế website" controller="Article" action="ThietKeWeb" description="Dịch vụ thiết kế website cung cấp bới Tư vấn tin học. Chuyên thiết kế website chuyên nghiệp, thiết kế website đẹp" />
+    <mvcSiteMapNode title="ListInCate" controller="Article" action="ListInCate" dynamicNodeProvider="TNVTH.Web.CategoryDynamicNodeProvider, TNVTH.Web">
+      <mvcSiteMapNode title="Xem chi tiết" controller="Article" action="Detail" dynamicNodeProvider="TNVTH.Web.ArticleDynamicNodeProvider, TNVTH.Web" />
+      <mvcSiteMapNode title="Xem gói thiết kế web" controller="Article" action="XemGoiThietKeWeb" dynamicNodeProvider="TNVTH.Web.ArticleDynamicNodeProvider, TNVTH.Web" />
+      <mvcSiteMapNode title="Xem mẫu thiết kế web" controller="Article" action="XemMauThietKeWeb" dynamicNodeProvider="TNVTH.Web.ArticleDynamicNodeProvider, TNVTH.Web" />
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Blog" controller="Article" action="Blog" preservedRouteParameters="id,slug" description="Blog - Chia sẻ kiến thức tin học cùng Tư vấn tin học" >
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Bài viết liên quan" controller="Article" action="ContentByTag" preservedRouteParameters="id,slug" description="Bài viết liên quan" keywords="kien thuc noi day con, chia se kien thuc nau an, goc cha mem bai viet hay"/>
+    <mvcSiteMapNode title="Tìm kiếm" controller="Home" action="SearchPage" preservedRouteParameters="search" description="Tìm kiếm" />
+
+  </mvcSiteMapNode>
+</mvcSiteMap>

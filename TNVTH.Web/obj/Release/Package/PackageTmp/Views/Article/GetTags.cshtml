@@ -1,0 +1,12 @@
+﻿@model IEnumerable<TNVBABY.Web.Models.T_Tag>
+
+<div class="block_tag width_common space_bottom_20">
+    <div class="txt_tag">Tags</div>
+    @foreach (TNVBABY.Web.Models.T_Tag tag in Model)
+    {
+        if(!String.IsNullOrEmpty(tag.Title) )
+        { 
+            @Html.ActionLink(tag.Title, "ContentByTag", "Article", new { @id = tag.ID, @slug = tag.Slug }, new { @class="tag_item"})
+        }
+    }
+</div>

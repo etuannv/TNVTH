@@ -1,0 +1,39 @@
+﻿@model List<TNVTH.Web.Models.T_Slide>
+
+
+
+<div class="carousel slide" id="myCarousel">
+    <div class="carousel-inner">
+        @for (int i = 0; i < Model.Count() + 4; i += 4)
+        {
+            if (i < Model.Count())
+            {
+                var active = (i == 0) ? "active" : "";
+                <div class="item @active">
+                    <ul class="thumbnails">
+                        @for (int j = 0; j < 4; j++)
+                        {
+                            if (i + j < Model.Count())
+                            {
+                                <li class="col-md-3">
+                                    <div class="thumbnail">
+                                        <a target="@Model.ElementAt(i + j).Target" href="@Model.ElementAt(i + j).Link"><img src="@Model.ElementAt(i+j).ImagePath" alt="@Model.ElementAt(i+j).Title"></a>
+                                    </div>
+                                    <div class="caption">
+                                        <h4>@Model.ElementAt(i + j).Title</h4>
+                                        <a target="@Model.ElementAt(i + j).Target class=" btn btn-mini" href="@Model.ElementAt(i + j).Link">&raquo; Xem</a>
+                                    </div>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            }
+        }
+    </div>
+        <div class="control-box">
+            <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+            <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+        </div><!-- /.control-box -->
+
+    </div><!-- /#myCarousel -->

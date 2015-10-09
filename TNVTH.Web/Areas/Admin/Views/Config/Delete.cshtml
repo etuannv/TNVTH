@@ -1,0 +1,52 @@
+﻿@model TNVTH.Web.Models.T_Config
+
+@{
+    ViewBag.Title = "Xóa";
+}
+
+@section header {
+    <h1>
+        <span>Config</span>
+        <small>Xóa</small>
+    </h1>
+}
+
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">Bạn có chắc chắn muốn xóa ? </h3>
+            </div><!-- /.box-header -->
+
+
+            <div class="box-body">
+                <div class="form-group">
+                    <label>Key</label>
+                    @Html.DisplayFor(m => m.Key, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Value</label>
+                    @Html.DisplayFor(m => m.Value, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    @Html.DisplayFor(m => m.Title, new { @class = "form-control" })
+                </div>
+            </div><!-- /.box-body -->
+            <!-- form start -->
+            @using (Html.BeginForm("Delete", "Config", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.ID)
+
+                <div class="box-footer">
+                    <a class="btn btn-primary" onclick="history.go(-1); return false;" href="#">Quay lại</a>
+                    <button type="submit" class="btn btn-primary">Xóa</button>
+                </div>
+            }
+        </div><!-- /.box -->
+        <!-- Form Element sizes -->
+    </div><!--/.col (left) -->
+</div>   <!-- /.row -->

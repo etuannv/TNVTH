@@ -1,0 +1,87 @@
+﻿@model TNVTH.Web.Areas.Admin.Models.TagViewModel
+
+@{
+    ViewBag.Title = "Sửa";
+}
+
+@section header {
+    <h1>
+        @if (ViewData["taxonomy"].ToString() == TNVTH.Web.Utilities.Constants.TAXONOMY_CATEGORY)
+        {<span>Danh mục tin</span>}
+        else if (ViewData["taxonomy"].ToString() == TNVTH.Web.Utilities.Constants.TAXONOMY_TAG)
+        {<span>Tag</span>}
+        else if (ViewData["taxonomy"].ToString() == TNVTH.Web.Utilities.Constants.TAXONOMY_PIC)
+        {<span>Danh mục Tranh tô</span>}
+        else if (ViewData["taxonomy"].ToString() == TNVTH.Web.Utilities.Constants.TAXONOMY_VIDEO)
+        {<span>Danh mục Video</span>}
+        <small>Sửa</small>
+    </h1>
+}
+
+<div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header">
+
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            @using (Html.BeginForm("Edit", "Tag", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(m => m.Taxonomy)
+                <div class="box-body">
+                    <div class="form-group focus">
+                        <label>Tên</label>
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Nhập tên" })
+                        @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                    <div class="form-group">
+                        <label>Slug</label>
+                        @Html.TextBoxFor(m => m.Slug, new { @class = "form-control", placeholder = "Nhập slug" })
+                        @Html.ValidationMessageFor(model => model.Slug)
+                    </div>
+                    @if (ViewData["taxonomy"].ToString() == TNVTH.Web.Utilities.Constants.TAXONOMY_CATEGORY)
+                    {
+                        <div class="form-group">
+                            <label>Cấp cha</label>
+                            @Html.DropDownListFor(m => m.ParentID, new SelectList(Model.TagList, "ID", "Title", 1), "Chọn cấp cha", new { @class = "form-control" })
+                        </div>
+
+                    }
+
+                    <div class="form-group">
+                        <label>Mô tả</label>
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = "3", placeholder = "Nhập mô tả" })
+                    </div>
+
+                </div><!-- /.box-body -->
+                <div class="box-footer">
+                    @Html.ActionLink(
+                                        "Quay lại",
+                                        "List",
+                                        "Tag",
+                                            new { @taxonomy = ViewData["taxonomy"].ToString() },
+                                            new { @class = "btn btn-primary" })
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            }
+        </div><!-- /.box -->
+        <!-- Form Element sizes -->
+    </div><!--/.col (left) -->
+</div>   <!-- /.row -->
+
+
+<script src="/Content/themes/admin/dist/js/custome.js"></script>
+<script type="text/javascript">
+    $("#Slug").focus(function () {
+        genSlug();
+    });
+
+    function genSlug() {
+        var title = $('#Title').val().trim();
+        var myslug = slug(title);
+        $('#Slug').val(myslug);
+    }
+</script>

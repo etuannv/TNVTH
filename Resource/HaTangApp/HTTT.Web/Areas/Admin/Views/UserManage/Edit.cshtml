@@ -1,0 +1,87 @@
+﻿@model HTTT.HaTangApp.Models.ViewModel.UserViewModel
+@{
+    ViewBag.Title = "Edit User";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Edit User</h2>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>UserCreate</legend>
+
+        <div class="editor-sector">
+            <p class="editor-in">
+            @Html.LabelFor(model => model.UserName)
+            @Html.EditorFor(model => model.UserName)
+            <span class="editor-req">*</span>
+            </p>
+            <p class="editor-msg">@Html.ValidationMessageFor(model => model.UserName)</p>
+        </div>
+
+        <div class="editor-sector">
+            <p class="editor-in">
+            @Html.LabelFor(model => model.FistName)
+            @Html.EditorFor(model => model.FistName)
+            </p>
+            <p class="editor-msg">@Html.ValidationMessageFor(model => model.FistName)</p>
+        </div>
+
+        <div class="editor-sector">
+            <p class="editor-in">
+            @Html.LabelFor(model => model.LastName)
+            @Html.EditorFor(model => model.LastName)
+            </p>
+            <p class="editor-msg">@Html.ValidationMessageFor(model => model.LastName)</p>
+        </div>
+
+         <div class="editor-sector">
+            <p class="editor-in">
+            @Html.LabelFor(model => model.Email)
+            @Html.EditorFor(model => model.Email)
+            <span class="editor-req">*</span>
+            </p>
+            <p class="editor-msg">@Html.ValidationMessageFor(model => model.Email)</p>
+        </div>
+        
+        <div class="editor-sector">
+            <p class="editor-in">
+            @Html.LabelFor(model => model.HomePhone)
+            @Html.EditorFor(model => model.HomePhone)
+            </p>
+            <p class="editor-msg">@Html.ValidationMessageFor(model => model.HomePhone)</p>
+        </div>
+
+        <div class="editor-sector">
+            <p class="editor-in">
+            @Html.LabelFor(model => model.Mobile)
+            @Html.EditorFor(model => model.Mobile)
+            </p>
+            <p class="editor-msg">@Html.ValidationMessageFor(model => model.Mobile)</p>
+        </div>
+
+        <div class="editor-sector">
+            <p class="editor-in">
+            @Html.LabelFor(model => model.Password)
+            @Html.EditorFor(model => model.Password)
+            <span class="editor-req">*</span>
+            </p>
+            <p class="editor-msg">@Html.ValidationMessageFor(model => model.Password)</p>
+         </div>
+
+         <div class="editor-sector">
+            <p class="editor-in">
+            @Html.LabelFor(model => model.ConfirmPassword)
+            @Html.EditorFor(model => model.ConfirmPassword)
+            <span class="editor-req">*</span>
+            </p>
+            <p class="editor-msg">@Html.ValidationMessageFor(model => model.ConfirmPassword)</p>
+         </div>
+        <p>
+            <input type="submit" value="CreateUser" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "ListUsers")
+</div>
+

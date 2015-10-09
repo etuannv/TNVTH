@@ -1,0 +1,6 @@
+﻿@model IEnumerable<TNVBABY.Web.Models.T_HotLink>
+
+@foreach(var item in Model)
+{ 
+<p><a href="@item.Link" target="@item.Target">@item.Title</a></p>
+}

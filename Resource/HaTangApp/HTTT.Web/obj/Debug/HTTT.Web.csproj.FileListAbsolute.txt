@@ -1,0 +1,17 @@
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\bin\HTTT.HaTangApp.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\bin\HTTT.HaTangApp.pdb
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\bin\EntityFramework.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\bin\EntityFramework.xml
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\obj\Debug\HTTT.HaTangApp.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.HaTangApp\obj\Debug\HTTT.HaTangApp.pdb
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Web\bin\HTTT.HaTangApp.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Web\bin\HTTT.HaTangApp.pdb
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Web\bin\EntityFramework.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Web\bin\HTTT.Utilities.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Web\bin\HTTT.Utilities.pdb
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Web\bin\EntityFramework.xml
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Web\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Web\obj\Debug\HTTT.HaTangApp.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Web\obj\Debug\HTTT.HaTangApp.pdb
+D:\SETUP\OnlineLocation\OneDrive\WorkingProjects\HaTangApp\trunk\HTTT.HaTangApp\HTTT.Web\obj\Debug\HTTT.Web.csprojResolveAssemblyReference.cache

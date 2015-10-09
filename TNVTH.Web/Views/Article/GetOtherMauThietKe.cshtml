@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TNVTH.Web.Models.T_News>
+
+<div class="panel">
+    <h3><a href="/Article/SieuThiWeb" class="nolink"><span>Mẫu thiết kế khác</span></h3></a>
+    @foreach (var item in Model)
+{
+    <a href="/Article/Detail/@item.ID/@item.Slug" class="btn-inline">
+        <div class="col-sm-12">
+            <figure><img src="@item.AvataImageUrl" alt=""></figure>
+            <div class="caption maxheight2">
+                <div class="box_inner">
+                    <div class="box">
+                        <p class="title"><h4>@item.Title</h4></p>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+}
+    <a href="/Article/SieuThiWeb" class=""><span>Xem thêm >></span></a>
+</div>
+
+
+
+@*<h2 class="text-center"><span><a href="/Article/SieuThiWeb" class="nolink">Siêu thị Web</a></span></h2>
+    <div class="row">
+
+
+        <div class="portfolio-items isotopeWrapper clearfix" id="3">
+            @foreach (var item in Model)
+            {
+                <article class="col-sm-4 isotopeItem">
+                    <div class="portfolio-item">
+                        <img src="@item.AvataImageUrl" alt="" />
+                        <div class="portfolio-desc align-center">
+                            <div class="folio-info">
+                                <a href="/Article/DetailXemMauThietKeWeb/@item.ID/@item.Slug" class="nolink">
+                                    <h5>@item.Title</h5>
+                                    <i class="fa fa-link fa-2x"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+
+
+        <div class="col-lg-12 text-center">
+            <a href="/Article/SieuThiWeb" class="btn btn-mini">Xem tất cả</a>
+        </div>
+    </div>*@

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<TNVTH.Web.ViewModels.MauThietKeViewModel>
+
+<header id="head" class="secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>Siêu thị Web - Các mẫu thiết kế Website đẹp</h1>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- container -->
+<section class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <section id="portfolio" class="page-section section appear clearfix">
+                <br />
+                <br />
+                <p>
+                    Tổng hợp các mẫu thiết kế website đẹp nhất. Khi bạn có nhưu cầu thiết kế website. Bạn chỉ cần chọn mẫu thiết kế và liên hệ với Tư vấn tin học để thực hiện.
+                    <br />
+                    <br />
+                </p>
+
+
+                <div class="row">
+                    <nav id="filter" class="col-md-12 text-center">
+                        <ul>
+                            <li><a href="#" class="current btn-theme btn-small" data-filter="*">Tất cả</a></li>
+                            @foreach (TNVTH.Web.Models.T_Tag cate in ViewBag.MauThietKeCateList)
+                            {
+                                <li><a href="#" class="btn-theme btn-small" data-filter=".@cate.Slug">@cate.Title</a></li>
+                            }
+                        </ul>
+                    </nav>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="portfolio-items isotopeWrapper clearfix" id="3">
+                                @foreach(var item in Model)
+                                {
+                                <article class="col-sm-4 isotopeItem @item.Cate.Slug">
+                                    <div class="portfolio-item">
+                                        <img src="@item.MauThietKe.AvataImageUrl" alt="" />
+                                        <div class="portfolio-desc align-center">
+                                            <div class="folio-info">
+                                                <a href="/Article/Detail/@item.MauThietKe.ID/@item.MauThietKe.Slug" class="nolink">
+                                                    <h5>@item.MauThietKe.Title</h5>
+                                                    <i class="fa fa-link fa-2x"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>    
+                                }
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+</section>
+<!-- /container -->

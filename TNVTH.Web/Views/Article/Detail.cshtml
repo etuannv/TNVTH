@@ -1,0 +1,42 @@
+﻿@model TNVTH.Web.Models.T_News
+
+<header id="head" class="secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <h1>@Model.Title</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- container -->
+<section class="container">
+    <div class="row">
+        <!-- main content -->
+        <section class="col-sm-9 article-content">
+            <div class="entry-meta">
+                <span class="date"><i class="fa fa-clock-o"></i><a rel="bookmark" title="@Model.Title" href="@HttpContext.Current.Request.Url.AbsoluteUri"><time datetime="@Model.CreatedDate" class="entry-date updated">@Model.CreatedDate</time></a></span>
+                <span class="categories-links"><i class="fa fa-folder-open-o"></i>@Html.Action("GetCategoryLink", "Article", new { @id = @Model.ID })</span>
+                <span class="author vcard"><i class="fa fa-user"></i><a rel="author" href="http://tuvantinhoc.vn"> Tư vấn tin học</a></span>
+            </div>
+            @Html.Raw(HttpUtility.HtmlDecode(Model.ContentNews.Replace(@"<hr />", "")))
+            <div class="col-md-12" style="padding-left:0px; padding-top:0px; padding-bottom:10px; clear:left;">
+                <div class="fb-like" data-href="@Request.Url.ToString()" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                <div class="g-plusone" data-size="medium" data-href="@Request.Url.ToString()"></div>
+                <div class="g-plus" data-action="share" data-annotation="bubble" data-href="@Request.Url.ToString()"></div>
+            </div>
+            <br />
+            <div>@Html.Action("GetTags", new { @id = Model.ID, @taxonomy = TNVTH.Web.Utilities.Constants.TAXONOMY_TAG })</div>
+            <br/>
+            <div class="fb-comments" data-href="@Request.Url.ToString()" data-numposts="10" data-width="100%" data-colorscheme="light"></div>
+        </section>
+        <!-- /main -->
+        <!-- Sidebar -->
+        <aside class="col-sm-3 sidebar sidebar-right">
+            @Html.Action("GetBlogCategoryMenu", "Article")
+        </aside>
+        <!-- /Sidebar -->
+
+    </div>
+</section>

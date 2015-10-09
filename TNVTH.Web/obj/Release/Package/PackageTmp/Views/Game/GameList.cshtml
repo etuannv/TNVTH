@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TNVBABY.Web.Models.T_Game>
+
+<div class="row">
+
+    <!-- Article main content -->
+    <article class="col-md-9 maincontent">
+        @Html.MvcSiteMap().SiteMapPath()
+        <hr style="margin-top:5px" />
+        @Html.Action("GetAdvertisment", "Home",  new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Game_Center1 })
+        <ul class="list-unstyled video-list-thumbs row">
+            @foreach (var item in Model)
+            {
+                <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <a title="@item.Title" href="/Game/Choi/@item.ID/@item.Slug">
+                        <img style="width: 100%; max-height:285px;" class="img-responsive" src="@item.ThumbUrl">
+                        <h3 style="min-height: 55px;">@TNVBABY.Web.Utilities.Common.GetDescriptionByChar(@item.Title, 48)</h3>
+                        <span class="game-play-button"></span>
+                        <span class="view-count">@item.ViewCount lượt chơi</span>
+                    </a>
+                </li>
+            }
+        </ul>
+        @Html.Action("GetAdvertisment", "Home",  new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Game_Center2 })
+    </article>
+    <!-- /Article -->
+    <!-- Sidebar -->
+    <aside class="col-md-3 sidebar sidebar-left">
+        <div class="row panel">
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Game_Right1.ToString() })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetHotLinkRight", "Home", new { @type = TNVBABY.Web.Utilities.HotLinkType.Game.ToString(), @limit = 20 })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Game_Right2.ToString() })
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                <h3>Loại Game</h3>
+                @Html.Action("GetGameCategoryMenu", new { @limit = 20 })
+
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                @Html.Action("GetAdvertisment", "Home", new { @positionKey = @TNVBABY.Web.Utilities.Config.Ad_Game_Right3.ToString() })
+            </div>
+        </div>
+    </aside>
+    <!-- /Sidebar -->
+</div>

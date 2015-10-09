@@ -1,0 +1,68 @@
+﻿@using MvcPaging;
+@model IPagedList<TNVTH.Web.Models.T_News>
+
+<header id="head" class="secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>Các gói thiết kế website</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="courses" class="top-margin">
+    <section class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="newsBox">
+
+                        <div class="thumbnail">
+                            <a title="Xem @item.Title" href="/Article/Detail/@item.ID/@item.Slug" class="btn-inline">
+                                <figure><img src="@item.AvataImageUrl" alt="Xem @item.Title"></figure>
+                            </a>
+                            <div class="caption maxheight2">
+                                <div class="box_inner">
+                                    <div class="box">
+                                        <a href="/Article/Detail/@item.ID/@item.Slug" class="btn-inline">
+                                            <p class="title"><h4>@item.Title</h4></p>
+                                        </a>
+                                        <p>@Html.Raw(HttpUtility.HtmlDecode(@TNVTH.Web.Utilities.Common.GetDescription(@item.ContentNews, 40)))</p>
+                                    </div>
+                                    <div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+            <div class="col-lg-12 text-center">
+                <div class="dataTables_paginate paging_bootstrap">
+                    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+                                    .DisplayTemplate("Bootstrap3Pagination")
+                                    .MaxNrOfPages(14)
+                                    .AlwaysAddFirstPageNumber()
+                                    .SetPreviousPageText("← Trước")
+                                    .SetNextPageText("→ Sau")
+                                             .RouteValues(new { })
+                                    )
+                </div>
+            </div>
+        </div>
+
+    </section><!-- /.container -->
+</div>
+    <hr />
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3><span>Dự án đã hoàn thành</span></h3>
+                @Html.Action("GetCarousel", "Home", new { @id = 10 })
+
+            </div><!-- /.span12 -->
+        </div><!-- /.row -->
+    </section><!-- /.container -->

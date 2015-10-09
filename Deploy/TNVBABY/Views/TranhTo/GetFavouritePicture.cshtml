@@ -1,0 +1,21 @@
+﻿@model IEnumerable<TNVBABY.Web.Models.T_Picture>
+
+<ul class="list-unstyled video-list-thumbs row">
+    @foreach (var item in Model)
+    {
+        <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+            <a title="@item.Title" href="/TranhTo/XemTranh/@item.ID/@item.Slug">
+                @if (string.IsNullOrEmpty(@item.ThumbUrl))
+                {
+                    <img style="width: 100%; max-height:285px;" class="img-responsive" src="@Html.Action("GetOneImageOfPicture", new {Id=item.ID})">
+                }
+                else
+                {
+                    <img style="width:100%" class="img-responsive" src="@item.ThumbUrl">
+                }
+                <h3 style="min-height:55px;">@TNVBABY.Web.Utilities.Common.GetDescriptionByChar(@item.Title, 40)</h3>
+                <span class="view-count">@item.ViewCount lượt tải</span>
+            </a>
+        </li>
+    }
+</ul>

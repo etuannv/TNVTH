@@ -1,0 +1,62 @@
+﻿@using MvcPaging;
+@model IPagedList<TNVTH.Web.Models.T_News>
+
+<header id="head" class="secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>@ViewBag.CateTitle</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- container -->
+<section class="container">
+    <div class="row">
+        <!-- main content -->
+        <section class="col-sm-9 maincontent">
+            @if (Model.Count() < 1)
+            {
+                <h3> Không có bài viết nào trong chuyên mục này !</h3> 
+            }
+            @foreach (var item in Model)
+            {
+                <a href="/Article/Detail/@item.ID/@item.Slug">
+                    <h3>@item.Title</h3>
+                </a>
+                <div class="entry-meta">
+                <span class="date"><i class="fa fa-clock-o"></i><a rel="bookmark" title="@item.Title" href="@HttpContext.Current.Request.Url.AbsoluteUri"><time datetime="@item.CreatedDate" class="entry-date updated">@item.CreatedDate</time></a></span>
+                <span class="categories-links"><i class="fa fa-folder-open-o"></i>@Html.Action("GetCategoryLink", "Article", new { @id = @item.ID })</span>
+                <span class="author vcard"><i class="fa fa-user"></i><a rel="author" href="http://tuvantinhoc.vn"> Tư vấn tin học</a></span>
+                </div>
+                
+                @Html.Raw(HttpUtility.HtmlDecode(@TNVTH.Web.Utilities.Common.GetDescriptionHTML(@item.ContentNews, 200)))
+                @Html.ActionLink("  Chi tiết", "Detail", "Article", new { @id = item.ID, @slug = item.Slug }, null)
+                <hr />
+            }
+            @if(Model.Count() > 14)
+            {
+            <div class="row-fluid">
+                <div class="dataTables_paginate paging_bootstrap" style="float:right">
+                    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+                                    .DisplayTemplate("Bootstrap3Pagination")
+                                    .MaxNrOfPages(14)
+                                    .AlwaysAddFirstPageNumber()
+                                    .SetPreviousPageText("← Trước")
+                                    .SetNextPageText("→ Sau")
+                                                      .RouteValues(new { @CateId = ViewBag.CateId })
+                                    )
+                </div>
+            </div>
+            }
+        </section>
+        <!-- /main -->
+        <!-- Sidebar -->
+        <aside class="col-sm-3 sidebar sidebar-right">
+            @Html.Action("GetBlogCategoryMenu", "Article")
+        </aside>
+        <!-- /Sidebar -->
+
+    </div>
+</section>

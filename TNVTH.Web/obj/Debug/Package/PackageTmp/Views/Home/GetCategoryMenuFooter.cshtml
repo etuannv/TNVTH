@@ -1,0 +1,25 @@
+﻿@model IEnumerable<TNVTH.Web.Models.T_Tag>
+<ul class="menu">
+    @foreach (var item in Model)
+    {
+        <li>
+            @switch (@item.Taxonomy)
+            {
+                case TNVTH.Web.Utilities.Constants.TAXONOMY_CATEGORY:
+                    <a href="/GocChaMe/ListInCate/@item.ID/@item.Slug">@item.Title</a>
+                    break;
+                case TNVTH.Web.Utilities.Constants.TAXONOMY_PIC:
+                <a href="/TranhTo/LoaiTranh/@item.ID/@item.Slug">@item.Title</a>
+                    break;
+                case TNVTH.Web.Utilities.Constants.TAXONOMY_VIDEO:
+                <a href="/Video/LoaiVideo/@item.ID/@item.Slug">@item.Title</a>
+                    break;
+                case TNVTH.Web.Utilities.Constants.TAXONOMY_GAME:
+                <a href="/Game/LoaiGame/@item.ID/@item.Slug">@item.Title</a>
+                    break;
+            }
+
+        </li>
+    }
+
+</ul>

@@ -1,0 +1,10 @@
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Utilities\bin\Debug\HTTT.Utilities.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Utilities\bin\Debug\HTTT.Utilities.pdb
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Utilities\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Utilities\obj\Debug\HTTT.Utilities.dll
+E:\Projects\HaTangApp\HTTT.HaTangApp\HTTT.Utilities\obj\Debug\HTTT.Utilities.pdb
+D:\SETUP\OnlineLocation\OneDrive\WorkingProjects\HaTangApp\trunk\HTTT.HaTangApp\HTTT.Utilities\bin\Debug\HTTT.Utilities.dll
+D:\SETUP\OnlineLocation\OneDrive\WorkingProjects\HaTangApp\trunk\HTTT.HaTangApp\HTTT.Utilities\bin\Debug\HTTT.Utilities.pdb
+D:\SETUP\OnlineLocation\OneDrive\WorkingProjects\HaTangApp\trunk\HTTT.HaTangApp\HTTT.Utilities\obj\Debug\HTTT.Utilities.csprojResolveAssemblyReference.cache
+D:\SETUP\OnlineLocation\OneDrive\WorkingProjects\HaTangApp\trunk\HTTT.HaTangApp\HTTT.Utilities\obj\Debug\HTTT.Utilities.dll
+D:\SETUP\OnlineLocation\OneDrive\WorkingProjects\HaTangApp\trunk\HTTT.HaTangApp\HTTT.Utilities\obj\Debug\HTTT.Utilities.pdb

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<TNVTH.Web.Models.T_News>
+
+<div class="title-box clearfix "><h2 class="title-box_primary">Bài viết mới nhất</h2></div>
+<div class="list styled custom-list">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a title="@item.Title" href="/Article/Detail/@item.ID/@item.Slug">@item.Title</a></li>
+        }
+    </ul>
+</div>

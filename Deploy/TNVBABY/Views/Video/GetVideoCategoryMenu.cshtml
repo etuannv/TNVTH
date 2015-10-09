@@ -1,0 +1,5 @@
+﻿@model IEnumerable<TNVBABY.Web.Models.T_Tag>
+@foreach (var item in Model)
+{
+    <p><a href="/Video/LoaiVideo/@item.ID/@item.Slug">@item.Title</a></p>
+}

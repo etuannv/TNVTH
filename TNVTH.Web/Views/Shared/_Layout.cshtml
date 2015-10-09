@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta content="text/html" charset="utf-8" http-equiv="Content-Type">
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>@Html.MvcSiteMap().SiteMapTitle()</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="@Html.Raw(HttpUtility.HtmlDecode(@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Description))">
+    <meta content="all" name="robots">
+    @if (@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes.ContainsKey("keywords"))
+    {
+        <meta name="keywords" content="@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes["keywords"]">
+    }
+    <meta name="google-site-verification" content="QssF7AdiuG0Z_x36oLuwr3NJi8coUSDgKT22StuynDQ" />
+    <meta property="og:title" content="@Html.MvcSiteMap().SiteMapTitle()" />
+    <meta property="og:site_name" content="Tư vấn tin học" />
+    <meta property="og:url" content="@HttpContext.Current.Request.Url.AbsoluteUri" />
+    <meta property="og:description" content="@Html.Raw(HttpUtility.HtmlDecode(@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Description))" />
+    <meta property="fb:app_id" content="235600746588665" />
+    @if (@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes.ContainsKey("type"))
+    {
+        <meta name="og:type" content="@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes["type"]">
+    }
+    else
+    {
+        <meta name="og:type" content="website">
+    }
+
+    @if (@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes.ContainsKey("og:image"))
+    {
+        <meta property="og:image" content="@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes["og:image"]">
+    }
+    else
+    {
+        <meta property="og:image" content="http://tuvantinhoc/Content/themes/tvth/images/Logo.jpg">
+    }
+    @if (@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes.ContainsKey("author"))
+    {
+        <meta name="author" content="@MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Attributes["author"]">
+    }
+    else
+    {
+        <meta name="author" content="http://tuvantinhoc.vn">
+    }
+    
+    @Html.MvcSiteMap().MetaRobotsTag()
+    @Html.MvcSiteMap().CanonicalTag()
+
+    <link rel="favicon" href="/Content/themes/tvth/images/favicon.png">
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="/Content/themes/tvth/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/themes/tvth/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/themes/tvth/css/bootstrap-theme.css" media="screen">
+    <link rel="stylesheet" href="/Content/themes/tvth/css/style.css">
+    <link rel='stylesheet' id='camera-css' href='/Content/themes/tvth/css/camera.css' type='text/css' media='all'>
+
+
+    <link rel="stylesheet" type="text/css" href="/Content/themes/tvth/css/isotope.css" media="screen" />
+    <link rel="stylesheet" href="/Content/themes/tvth/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="Content/themes/tvth/js/html5shiv.js"></script>
+    <script src="Content/themes/tvth/js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Button for smallest screens -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand" href="/">
+                    <img src="/Content/themes/tvth/images/logo.png" alt="Tư vấn tin học">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                @Html.Action("GetTopMenu", "Home")
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <!-- /.navbar -->
+
+    @if (ViewData["hasSlide"] != null)
+    {
+        @Html.Action("GetSlide", "Home")
+    }
+    
+    @RenderBody()
+
+    @Html.Action("GetFooter", "Home")
+
+
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="/Content/themes/tvth/js/modernizr-latest.js"></script>
+    <script type='text/javascript' src='/Content/themes/tvth/js/jquery.min.js'></script>
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type='text/javascript' src='/Content/themes/tvth/js/fancybox/jquery.fancybox.pack.js'></script>
+
+    <script type='text/javascript' src='/Content/themes/tvth/js/jquery.mobile.customized.min.js'></script>
+    <script type='text/javascript' src='/Content/themes/tvth/js/jquery.easing.1.3.js'></script>
+    <script type='text/javascript' src='/Content/themes/tvth/js/camera.min.js'></script>
+    <script src="/Content/themes/tvth/js/bootstrap.min.js"></script>
+    <script src="/Content/themes/tvth/js/custom.js"></script>
+
+    <script src="/Content/themes/tvth/js/jquery.cslider.js"></script>
+    <script src="/Content/themes/tvth/js/jquery.isotope.min.js"></script>
+    
+    <script type="text/javascript">
+        function adClick(id) {
+            var clickurl = "/Home/AdvertismentClick/" + id;
+            jQuery.ajax({
+                url: clickurl,
+                contentType: 'application/html; charset=utf-8',
+                type: 'GET',
+                dataType: 'json'
+            });
+        }
+    </script>
+    <script>
+        jQuery(function () {
+
+            jQuery('#camera_wrap_4').camera({
+                height: '450',
+                loader: 'bar',
+                pagination: false,
+                thumbnails: false,
+                hover: false,
+                opacityOnGrid: false,
+                imagePath: 'Content/themes/tvth/images/'
+            });
+
+        });
+    </script>
+
+    <script>
+
+        //jQuery(document).ready(function ($) {
+        //    //set navigation
+        //    var path = window.location.pathname;
+        //    path = path.replace(/\/$/, "");
+        //    path = decodeURIComponent(path);
+
+        //    $(".nav a").each(function () {
+        //        var href = $(this).attr('href');
+        //        if (path.substring(0, href.length) === href) {
+        //            $(this).closest('li').addClass('active');
+        //            $(".nav li:first-child").removeClass('active');
+        //        }
+        //    });
+        //    if (path == "" || path == null) {
+        //        //forcus on fist
+        //        $(".nav > li:first-child").addClass('active');
+        //    }
+        //});
+    </script>
+
+
+
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.4&appId=235600746588665";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script src="https://apis.google.com/js/platform.js" async defer>
+        { lang: 'vi' }
+    </script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-41137893-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>

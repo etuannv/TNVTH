@@ -1,0 +1,66 @@
+﻿@using MvcPaging;
+@model IPagedList<TNVBABY.Web.Models.T_News>
+
+<div class="divPanel notop page-content">
+
+    <div class="breadcrumbs">
+        @Html.MvcSiteMap().SiteMapPath()
+    </div>
+
+    <div class="row-fluid">
+        <div class="span9">
+            <h1>@ViewBag.CateTitle</h1>
+            <hr />
+            @for (int i = 0; i < Model.TotalItemCount + 2; i += 3)
+            {
+                if (i < Model.TotalItemCount)
+                {
+                    <div class="row-fluid news-incate">
+                        <ul class="thumbnails">
+                            if (i < Model.TotalItemCount)
+                            {
+                            <li class="span3">
+                                <div class="thumbnail">
+                                    <a href="Article/Detail/@Model.ElementAt(i).ID/@Model.ElementAt(i).Slug">
+                                        <img src="@Model.ElementAt(i).AvataImageUrl" alt="Ảnh đại điện" title="@Model.ElementAt(i).Title" />
+                                    </a>
+                                    <div class="caption">
+                                        <h3>@Model.ElementAt(i).Title</h3>
+                                        <p>@Html.Raw(HttpUtility.HtmlDecode(@TNVBABY.Web.Utilities.Common.GetDescription(@Model.ElementAt(i).ContentNews, 20)))</p>
+                                        <p>
+                                            <a style="margin:5px 0px 15px;" class="btn btn-info" href="Article/Detail/@Model.ElementAt(i).ID/@Model.ElementAt(i).Slug">Chi tiết</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                    <hr />
+                }
+            }
+            <div class="row-fluid">
+                <div class="dataTables_paginate paging_bootstrap" style="float:right">
+                    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+                                    .DisplayTemplate("Bootstrap3Pagination")
+                                    .MaxNrOfPages(14)
+                                    .AlwaysAddFirstPageNumber()
+                                    .SetPreviousPageText("← Trước")
+                                    .SetNextPageText("→ Sau")
+                                             .RouteValues(new { })
+                                    )
+                </div>
+            </div>
+        </div>
+        <!--Edit Sidebar Content here-->
+        <div class="span3">
+            <h3 class="title-full">Hình ảnh</h3>
+            @Html.Action("GetSlideOne", "Home", new { id = 6, width = "251px", height = "180px" })
+        </div>
+        <!--/End Sidebar Content -->
+
+    </div>
+    <div id="footerInnerSeparator"></div>
+</div>
+
+

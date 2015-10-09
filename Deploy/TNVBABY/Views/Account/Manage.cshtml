@@ -1,0 +1,31 @@
+﻿@{
+    Layout = Request.IsAjaxRequest() ? null : "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@model TNVBABY.Web.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Manage Account";
+}
+@section header {
+    <h1>
+       @ViewBag.Title
+        <small>Đổi mật khẩu</small>
+    </h1>
+}
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+<p>Bạn đang đăng nhập với tài khoản: <strong>@User.Identity.Name</strong>.</p>
+
+@if (ViewBag.HasLocalPassword)
+{
+    @Html.Partial("_ChangePasswordPartial")
+}
+else
+{ 
+    @Html.Partial("_SetPasswordPartial")
+}
+
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@
